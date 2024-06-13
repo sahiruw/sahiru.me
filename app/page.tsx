@@ -1,8 +1,17 @@
-import Image from "next/image";
+// pages/index.js
+import Navbar from './components/SquareNav';
+import randomImage from "../assests/images.jpeg";
+import Image from "next/image"
 
-export default function Home() {
+function Home() {
   return (
-    <main><h1>Not the Home</h1></main>
+
+    <main>
+      <Navbar />
+      <Image src="/images.jpeg" width="2500" height="64" alt='hehe' />
+
+    </main>
   );
 }
 
+export default Home;
