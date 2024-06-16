@@ -13,7 +13,7 @@ function Home() {
       <Navbar />
       <LogoBar />
       
-      <div className="video-container">
+      <div className="video-container blur-sm">
         <video preload="auto" autoPlay loop playsInline muted>
           <source src="/back.mp4" type="video/mp4" />
           Your browser does not support the video tag.

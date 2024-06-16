@@ -21,9 +21,9 @@ const Navbar = () => {
 
 
   // Common styles
-  const navStyleCommon = 'w-3/6 top-0 left-0 z-50 h-20 fixed z-50 align-middle text-white bg-neutral-900/0 text-2xl font-bold p-4';
+  const navStyleCommon = 'w-4/6 top-0 left-0 z-49 h-20 fixed align-middle text-white text-2xl font-bold p-4 bg-neutral-900 ';
 
-  const navStyle = `${navStyleCommon} ${isScrolled ? 'bg-neutral-600/100' : 'bg-neutral-600/50'}`;
+  const navStyle = `${navStyleCommon} ${isScrolled ? 'visible' : 'invisible'}`;
   
 
   return (
