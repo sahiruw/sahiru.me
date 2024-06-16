@@ -6,7 +6,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const handleScroll = () => {
-    if (window.scrollY > 200) {
+    if (window.scrollY > 400) {
       setIsScrolled(true);
     }
     else {
@@ -21,7 +21,7 @@ const Navbar = () => {
 
 
   // Common styles
-  const navStyleCommon = 'w-4/6 top-0 left-0 z-49 h-20 fixed align-middle text-white text-2xl font-bold p-4 bg-neutral-900 ';
+  const navStyleCommon = 'w-4/6 top-0 left-0 z-49 h-16 fixed align-middle text-white text-2xl font-bold p-4 bg-neutral-900 ';
 
   const navStyle = `${navStyleCommon} ${isScrolled ? 'visible' : 'invisible'}`;
   
