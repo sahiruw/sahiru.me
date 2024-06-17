@@ -36,27 +36,25 @@ const Navbar = () => {
   }, []);
 
   // Common styles
-  const navStyleCommon = 'gap-0 columns-6 w-2/6 top-0 right-0 z-50  transition-all duration-100 ease-in-out hover:w-3/6 ';
-  const navItemWHoleStyleCommon = 'border-dotted border-r-2 h-full text-center bg-cover ';
+  const navStyleCommon = 'font-mono gap-0 columns-6 w-2/6 top-0 right-0 z-50  transition-all duration-100 ease-in-out  ';
+  const navItemWHoleStyleCommon = 'hover:bg-orange-700/100  h-full text-center bg-cover transition-all duration-300 ease-in-out '; //border-opacity-0 border-dotted border-r-2 
   const navIndexStyleCommon = 'text-[36px] flex justify-center items-center ';
 
   // Conditional styles
-  const navStyle = `${navStyleCommon} ${isScrolled ? 'bg-orange-800/100 h-20 fixed' : 'bg-orange-600/25 h-screen absolute'}`;
+  const navStyle = `${navStyleCommon} ${isScrolled ? 'bg-orange-900/100 h-20 fixed' : 'bg-orange-800/25 h-screen absolute'}`;
   const navItemStyle = isScrolled ? 'text-[15px] -my-10 text-neutral-50/100 ' : '-rotate-90 text-[36px] text-neutral-50/75 ';
   const navIndexStyle = isScrolled ? `${navIndexStyleCommon} text-neutral-50/25 h-16` : `${navIndexStyleCommon} text-neutral-50  h-1/6`;
   const navItemWHoleStyle = isScrolled ? navItemWHoleStyleCommon : `${navItemWHoleStyleCommon} space-y-[450px]`;
-
-
 
   return (
     <div className={navStyle}>
       {navItems.map((item, index) => {
         return (
           <div key={index} className={navItemWHoleStyle}>
-            {/* <div key={index} className={navItemWHoleStyle + " opacity-50"} style={{ backgroundImage: `url(${backgroundImageUrl})` }}> */}
-              <div className={navIndexStyle}>{icons[index]}</div>
-              {/* <div className={navIndexStyle}>{index + 1}</div> */}
-              <div className={navItemStyle}>{item}</div>
+            {/* <div key={index} className={navItemWHoleStyle + " z-20"} style={{ backgroundImage: `url(${backgroundImageUrl})`, opacity: 0.5 }}> */}
+            <div className={navIndexStyle}>{icons[index]}</div>
+            {/* <div className={navIndexStyle}>{index + 1}</div> */}
+            <div className={navItemStyle}>{item}</div>
             {/* </div> */}
           </div>
         )
