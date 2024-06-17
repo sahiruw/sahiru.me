@@ -21,7 +21,7 @@ const Navbar = () => {
 
 
   // Common styles
-  const navStyleCommon = 'font-mono text-orange-700 w-4/6 top-0 left-0 z-49 h-16 fixed align-middle text-2xl font-bold p-4 bg-neutral-900 ';
+  const navStyleCommon = 'font-mono text-orange-700 w-4/6 top-0 left-0 z-50 h-16 fixed align-middle text-2xl font-bold p-4 bg-neutral-900 ';
 
   const navStyle = `${navStyleCommon} ${isScrolled ? 'visible' : 'invisible'}`;
   

@@ -36,7 +36,7 @@ const Navbar = () => {
   }, []);
 
   // Common styles
-  const navStyleCommon = 'font-mono gap-0 columns-6 w-2/6 top-0 right-0 z-50  transition-all duration-100 ease-in-out  ';
+  const navStyleCommon = 'gap-0 columns-6 w-2/6 top-0 right-0 z-50  transition-all duration-100 ease-in-out  ';
   const navItemWHoleStyleCommon = 'hover:bg-orange-700/100  h-full text-center bg-cover transition-all duration-300 ease-in-out '; //border-opacity-0 border-dotted border-r-2 
   const navIndexStyleCommon = 'text-[36px] flex justify-center items-center ';
 
