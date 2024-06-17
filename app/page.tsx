@@ -9,7 +9,7 @@ import LogoBar from './components/LogoBar';
 function Home() {
   let ids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   return (
-    <main className='bg-neutral-900'>
+    <main className='bg-neutral-900 font-mono '>
       <Navbar />
       <LogoBar />
       
@@ -23,11 +23,7 @@ function Home() {
 
       <HelloCard />
       
-      {
-        ids.map((id) => {
-          return <About  />
-        })
-      }
+      <About  />
     </main>
   );
 }
