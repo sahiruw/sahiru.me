@@ -43,7 +43,7 @@ const Navbar = () => {
   // Conditional styles
   const navStyle = `${navStyleCommon} ${isScrolled ? 'bg-orange-900/100 h-20 fixed' : 'bg-orange-800/25 h-screen absolute'}`;
   const navItemStyle = isScrolled ? 'text-[15px] -my-10 text-neutral-50/100 ' : '-rotate-90 text-[36px] text-neutral-50/75 ';
-  const navIndexStyle = isScrolled ? `${navIndexStyleCommon} text-neutral-50/25 h-16` : `${navIndexStyleCommon} text-neutral-50  h-1/6`;
+  const navIndexStyle = isScrolled ? `${navIndexStyleCommon} text-neutral-50/25 h-20` : `${navIndexStyleCommon} text-neutral-50  h-1/6`;
   const navItemWHoleStyle = isScrolled ? navItemWHoleStyleCommon : `${navItemWHoleStyleCommon} space-y-[450px]`;
 
   return (
