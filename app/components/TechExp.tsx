@@ -28,7 +28,7 @@ const technologies = [
 
 const TechStack = () => {
     return (
-        <div className='bg-neutral-600 p-6 my-32 z-0 transition-all duration-700 ease-in-out '>
+        <div className='bg-neutral-200 px-6  p-20 z-0 transition-all duration-700 ease-in-out '>
             <h1 className="text-2xl text-center my-10">Hands-On Experience</h1>
             <div className="flex flex-wrap justify-center items-center ">
 
