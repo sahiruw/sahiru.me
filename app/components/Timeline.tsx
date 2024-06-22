@@ -3,19 +3,24 @@ import React from 'react'
 
 const TimelineC = () => {
     return (
-        <div className=' bg-neutral-900 my-32 w-5/6 ml-32 z-0'>
-            <h1 className="text-white text-2xl text-left my-10">My Journey</h1>
+        <div className='relative bg-neutral-900  z-0'>
+            <div className="absolute inset-0 bg-cover bg-center blur h-full" style={{ backgroundImage: `url("./road.jpg")`}}>
+                <div className="absolute inset-0 bg-black opacity-75"></div>
+            </div>
+            <div className="relative z-10 w-5/6 ml-32 p-40">
+                <h1 className="text-white text-2xl text-left my-10">My Journey</h1>
 
-            <div className='flex justify-center items-center '>
-                <ol className="relative border-s border-gray-200 dark:border-gray-700">
-                    {TimelineItem('GTN Technologies', '2023 Dec - 2024 May', 'Joining as a Software Engineering Intern in the Platform Engineering Team, I got the oppertunity to contribute to the development of the core platform of the organization. I was able to work with the latest technologies and tools in the industry and gained valuable experience in the field of software engineering and platform engineering.')}
-                    {TimelineItem('University of Moratuwa - Faculty of Engineering', '2021 Aug - Present', 'Currently pursuing my degree in Computer Science and Engineering.')}
-                    {TimelineItem('Freelance Developer - Apps Script & VBA', '2019 Dec - Present', 'Started freelancing as a developer, specializing in Google Apps Script and VBA. I have completed over 600 projects to date, ranging from simple automation scripts to complex web applications.')}
-                    {TimelineItem('Innodate Lanka Pvt Ltd', '2019 Sep - 2020 Jan', 'Joined as a Project Associate and worked on a project to digitalize textbooks and contributed to an XML markup project for UK standard documents.'
-                        + ' My role entailed the strategic use of regex, markup tools, and Python to automate essential tasks, contributing effectively as a collaborative team member.')}
-                    {TimelineItem('Richmond College', '2019', 'Passed G.C.E A/Ls in Physical Science Stream with 3A passes.')}
-                </ol>
+                <div className='flex justify-center items-center '>
+                    <ol className="relative border-s border-gray-200 dark:border-gray-700">
+                        {TimelineItem('GTN Technologies', '2023 Dec - 2024 May', 'Joining as a Software Engineering Intern in the Platform Engineering Team, I got the oppertunity to contribute to the development of the core platform of the organization. I was able to work with the latest technologies and tools in the industry and gained valuable experience in the field of software engineering and platform engineering.')}
+                        {TimelineItem('University of Moratuwa - Faculty of Engineering', '2021 Aug - Present', 'Currently pursuing my degree in Computer Science and Engineering.')}
+                        {TimelineItem('Freelance Developer - Apps Script & VBA', '2019 Dec - Present', 'Started freelancing as a developer, specializing in Google Apps Script and VBA. I have completed over 600 projects to date, ranging from simple automation scripts to complex web applications.')}
+                        {TimelineItem('Innodate Lanka Pvt Ltd', '2019 Sep - 2020 Jan', 'Joined as a Project Associate and worked on a project to digitalize textbooks and contributed to an XML markup project for UK standard documents.'
+                            + ' My role entailed the strategic use of regex, markup tools, and Python to automate essential tasks, contributing effectively as a collaborative team member.')}
+                        {TimelineItem('Richmond College', '2019', 'Passed G.C.E A/Ls in Physical Science Stream with 3A passes.')}
+                    </ol>
 
+                </div>
             </div>
         </div>
 
