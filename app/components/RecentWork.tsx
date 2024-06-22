@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Feedback = () => {
+const RecentWork = () => {
     return (
         <div className="flex justify-center items-center bg-neutral-900  my-32 ">
             <p className="text-white text-center text-2xl leading-relaxed max-w-4xl">
@@ -10,4 +10,4 @@ const Feedback = () => {
     );
 }
 
-export default Feedback
+export default RecentWork

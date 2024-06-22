@@ -5,12 +5,11 @@ import TimelineC from './Timeline';
 
 const About = () => {
   return (
-    <>
+    <div className=''>
     <MyDescription />
     <TimelineC />
     <TechExp />
-    <MyDescription />
-    </>
+    </div>
   );
 };
 
