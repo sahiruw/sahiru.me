@@ -7,8 +7,8 @@ const TimelineC = () => {
             <div className="absolute inset-0 bg-cover bg-center blur h-full" style={{ backgroundImage: `url("./road.jpg")`}}>
                 <div className="absolute inset-0 bg-black opacity-75"></div>
             </div>
-            <div className="relative z-10 w-5/6 ml-32 p-40">
-                <h1 className="text-white text-2xl text-left my-10">My Journey</h1>
+            <div className="relative z-10 w-5/6 sm:ml-32 sm:p-40 ml-10">
+                <h1 className="text-white text-2xl text-left mb-12">My Journey</h1>
 
                 <div className='flex justify-center items-center '>
                     <ol className="relative border-s border-gray-200 dark:border-gray-700">

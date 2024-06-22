@@ -7,9 +7,9 @@ const HelloCard = () => {
     const portraitUrl = '/me.png';
 
     return (
-        <div className='text-white absolute bottom-0 left-0 w-3/6 p-10 font-mono'>
+        <div className='text-white absolute bottom-0 left-0 sm:w-3/6 p-10 font-mono'>
 
-            <img src={portraitUrl} alt="Sahiru Wijesinghe" className='h-60 my-2' />
+            <img src={portraitUrl} alt="Sahiru Wijesinghe" className='max-h-60 my-2 -ml-3' />
             <h1 className="text-4xl md:text-6xl font-bold">Hello, <span className='text-orange-700 font-sans'>I'm Sahiru Wijesinghe</span></h1>
             <span className='text-neutral-500'>
                 <p className="text-xl md:text-2xl">A Passionate</p>

@@ -4,10 +4,10 @@ import RecentWork from './RecentWork'
 
 const Work = () => {
   return (
-    <>
+    <div id='work'>
       <Feedback />
       <RecentWork />
-    </>
+    </div>
   )
 }
 
