@@ -39,9 +39,12 @@ const Navbar = () => {
 
       <div className={navStyle}>
         {navItems.map((item, index) => (
-          <Link href={`#${item.toLowerCase()}`} onClick={(e) => {
+          <Link key={index} href={`#${item.toLowerCase()}`} onClick={(e) => {
             e.preventDefault();
-            document.getElementById(item.toLowerCase()).scrollIntoView({ behavior: "smooth" })
+            const element = document.getElementById(item.toLowerCase());
+            if (element) {
+              element.scrollIntoView({ behavior: "smooth" });
+            }
           }}>
             <div key={index} className={navItemWholeStyle} style={{ backgroundImage: `url(${images[index]})`, opacity: 0.8 }}>
               <div className={navIndexStyle}>{icons[index]}</div>
