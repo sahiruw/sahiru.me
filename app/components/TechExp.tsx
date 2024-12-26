@@ -40,7 +40,7 @@ const technologies = [
 
 const TechStack = () => {
     return (
-        <div className="text-white px-6 pt-40 py-20 z-0 bg-gradient-to-b from-[#0A1020] to-[#565963]">
+        <div className="text-white px-6 pt-40 py-20 z-0 bg-gradient-to-b from-[#0A1020] to-neutral-800">
             <h1 className="text-4xl text-center font-bold my-10">Hands-On Experience</h1>
             <div className="flex flex-wrap justify-center items-center gap-4">
                 {technologies.map((tech) => (
