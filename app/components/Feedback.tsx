@@ -135,7 +135,7 @@ const Feedback = () => {
                             <p className="text-sm text-gray-400 mb-2">{review.date}</p>
                             {/* <p className="text-yellow-500">{review.rating} / 5</p> */}
                             {/* <p className="text-gray-400 mt-2">Platform: {review.platform}</p> */}
-                            <p className="text-base mb-4">"{review.reviewMessage}"</p>
+                            <p className="text-base mb-4">{review.reviewMessage}</p>
                         </div>
                     ))}
                 </div>
