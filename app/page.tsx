@@ -26,6 +26,9 @@ function Home() {
 
       <Navbar />
 
+      <About />
+      <Work />
+
     </main>
   );
 }

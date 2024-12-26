@@ -5,7 +5,7 @@ import Clients from './Clients'
 
 const Work = () => {
   return (
-    <div id='work' className='mt-20'>
+    <div id='work' className=''>
       <RecentWork />
       <Feedback />
       <Clients />

@@ -1,13 +1,13 @@
 import React from 'react';
 import MyDescription from './MyDescription';
 import TechExp from './TechExp';
-import TimelineC from './Timeline';
+import TimelineC from './TimelineMy';
 
 const About = () => {
   return (
     <div className='' id='about'>
       <MyDescription />
-      <TimelineC />
+      <div id='timeline'><TimelineC /></div>
       <TechExp />
     </div>
   );

@@ -11,7 +11,7 @@ const projects = [
 
 const ProjectShowcase = () => {
     return (
-        <div className="my-20">
+        <div className="py-20  bg-gradient-to-b from-[#565963] to-neutral-950">
             <h1 className="text-2xl text-center text-white my-10">Recent Projects</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-8">
                 {projects.map((project) => (

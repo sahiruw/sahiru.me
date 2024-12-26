@@ -5,6 +5,9 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   distDir: "build",
+  images: {
+    domains: ['assets.aceternity.com'],
+  },
 };
 
 export default nextConfig;
