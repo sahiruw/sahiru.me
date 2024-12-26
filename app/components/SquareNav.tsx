@@ -1,68 +1,74 @@
 'use client';
-import { browser } from 'process';
-import React, { useEffect, useState } from 'react'
-import { IoHomeOutline, IoInformationCircleOutline, IoConstructOutline, IoBriefcaseOutline, IoCallOutline, IoNewspaperOutline } from 'react-icons/io5';
-
+import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
+import {
+  IoHomeOutline,
+  IoInformationCircleOutline,
+  IoConstructOutline,
+  IoBriefcaseOutline,
+  IoCallOutline,
+  IoNewspaperOutline,
+} from 'react-icons/io5';
 
 const Navbar = () => {
-
   const [isScrolled, setIsScrolled] = useState(false);
-  const backgroundImageUrl = 'https://images.unsplash.com/photo-1581092919535-7146ff1a590b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGNvbXB1dGVyJTIwZW5naW5lZXJ8ZW58MHx8MHx8fDA%3D';
-  let navItems = ['HOME', 'ABOUT', 'SERVICES', 'WORK', 'CONTACT', 'BLOG']
-  let icons = [<IoHomeOutline />, <IoInformationCircleOutline />, <IoConstructOutline />, <IoBriefcaseOutline />, <IoCallOutline />, <IoNewspaperOutline />]
-  let images = []
 
   const handleScroll = () => {
-    if (window.scrollY > 400) {
-      setIsScrolled(true);
-    }
-    else {
-      setIsScrolled(false);
-    }
+    setIsScrolled(window.scrollY > 50);
   };
 
-  const updateDimensions = () => {
-    console.log(window.innerWidth);
-  }
   useEffect(() => {
-    window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
-
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Common styles
-  const navStyleCommon = 'gap-0 columns-6 w-2/6 top-0 right-0 z-50  transition-all duration-100 ease-in-out  ';
-  const navItemWHoleStyleCommon = 'hover:bg-orange-700/100  h-full text-center bg-cover transition-all duration-300 ease-in-out '; //border-opacity-0 border-dotted border-r-2 
-  const navIndexStyleCommon = 'text-[36px] flex justify-center items-center ';
-
-  // Conditional styles
-  const navStyle = `${navStyleCommon} ${isScrolled ? 'bg-orange-900/100 h-20 fixed' : 'bg-orange-800/25 h-screen absolute'}`;
-  const navItemStyle = isScrolled ? 'text-[15px] -my-10 text-neutral-50/100 ' : '-rotate-90 text-[36px] text-neutral-50/75 ';
-  const navIndexStyle = isScrolled ? `${navIndexStyleCommon} text-neutral-50/25 h-20` : `${navIndexStyleCommon} text-neutral-50  h-1/6`;
-  const navItemWHoleStyle = isScrolled ? navItemWHoleStyleCommon : `${navItemWHoleStyleCommon} space-y-[450px]`;
 
   return (
-    <div className={navStyle}>
-      {navItems.map((item, index) => {
-        return (
-          <div key={index} className={navItemWHoleStyle}>
-            {/* <div key={index} className={navItemWHoleStyle + " z-20"} style={{ backgroundImage: `url(${backgroundImageUrl})`, opacity: 0.5 }}> */}
-            <div className={navIndexStyle}>{icons[index]}</div>
-            {/* <div className={navIndexStyle}>{index + 1}</div> */}
-            <div className={navItemStyle}>{item}</div>
-            {/* </div> */}
-          </div>
-        )
-      })
-      }
+    <div
+      className={`fixed bottom-4 left-1/2 transform -translate-x-1/2 inline-flex mx-auto justify-between ${
+        isScrolled
+          ? 'bg-white border-gray-300 shadow-md' // Opaque styling
+          : 'bg-gradient-to-r from-white/10 via-white/20 to-white/10 backdrop-blur-md border border-white/30' // Transparent styling
+      } w-11/12 rounded-3xl transition-colors duration-300 z-50`}
+    >
+      <a
+        aria-current="page"
+        className="inline-flex flex-col items-center text-xs font-medium py-3 px-4 text-black flex-grow"
+        href="#"
+      >
+        <IoHomeOutline className="w-7 h-7" />
+        <span className="sr-only">Home</span>
+      </a>
+      <a
+        className="inline-flex flex-col items-center text-xs font-medium text-neutral-500 py-3 px-4 flex-grow"
+        href="#"
+      >
+        <IoInformationCircleOutline className="w-7 h-7" />
+        <span className="sr-only">About</span>
+      </a>
+      <button className="relative inline-flex flex-col items-center text-xs font-medium text-white py-3 px-6 flex-grow">
+        <div className={`absolute bottom-5 p-3 rounded-full border-2 ${isScrolled? '' : 'border-neutral-500'} bg-blue-600`}>
+          <IoCallOutline className="w-7 h-7" />
+        </div>
+        <span className="sr-only">Chat</span>
+      </button>
+      <a
+        className="inline-flex flex-col items-center text-xs font-medium text-neutral-500 py-3 px-4 flex-grow"
+        href="#"
+      >
+        <IoBriefcaseOutline className="w-7 h-7" />
+        <span className="sr-only">Search</span>
+      </a>
+      <a
+        className="inline-flex flex-col items-center text-xs font-medium text-neutral-500 py-3 px-4 flex-grow"
+        href="#"
+      >
+        <IoNewspaperOutline className="w-7 h-7" />
+        <span className="sr-only">Profile</span>
+      </a>
     </div>
+  );
+};
 
-  )
-}
-
-export default Navbar
+export default Navbar;

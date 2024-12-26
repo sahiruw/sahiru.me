@@ -1,16 +1,15 @@
 import React from 'react';
 import MyDescription from './MyDescription';
 import TechExp from './TechExp';
-import TimelineC from './Timeline';
+import TimelineC from './TimelineMy';
 
 const About = () => {
   return (
-    <>
-    <MyDescription />
-    <TimelineC />
-    <TechExp />
-    <MyDescription />
-    </>
+    <div className='' id='about'>
+      <MyDescription />
+      <div id='timeline'><TimelineC /></div>
+      <TechExp />
+    </div>
   );
 };
 

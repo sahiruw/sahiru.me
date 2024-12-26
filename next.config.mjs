@@ -1,8 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    basePath: "/sahiru.me",
-    output: "export",  // <=== enables static exports
-    reactStrictMode: true,
-  };
-  
-  module.exports = nextConfig;
+  reactStrictMode: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  distDir: "build",
+  images: {
+    domains: ['assets.aceternity.com'],
+  },
+};
+
+export default nextConfig;
