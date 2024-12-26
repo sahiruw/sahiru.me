@@ -34,7 +34,7 @@ jobs:
         run: npx next build
       
       - name: List files in 'out' directory
-        run: ls -la ./out
+        run: ls -la
       
 
       - name: Check if the 'out' directory exists
