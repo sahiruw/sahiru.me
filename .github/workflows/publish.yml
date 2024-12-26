@@ -33,10 +33,21 @@ jobs:
       - name: Build with Next.js 🏗️
         run: npx next build
 
-      - name: Upload artifact 📡
+      - name: Check if the 'out' directory exists
+        run: |
+          if [ ! -d "./out" ]; then
+            echo "Directory ./out does not exist. Skipping artifact upload."
+            exit 0
+          fi
+      
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
+          name: github-pages
+          retention-days: 1
+        env:
+          GITHUB_PAGES: true
 
   deploy:
     environment:
