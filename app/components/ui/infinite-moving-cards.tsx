@@ -2,8 +2,8 @@
 
 import { cn } from "../../lib/utils";
 import React, { useEffect, useState } from "react";
-// @ts-ignore
 import ReactStars from "react-rating-stars-component";
+
 
 export const InfiniteMovingCards = ({
   items,
