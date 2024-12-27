@@ -32,18 +32,13 @@ jobs:
 
       - name: Build with Next.js 🏗️
         run: npx next build
-      
-      - name: List files in 'out' directory
-        run: ls -la
-      
 
-      - name: Check if the 'out' directory exists
-        run: |
-          if [ ! -d "./out" ]; then
-            echo "Directory ./out does not exist. Skipping artifact upload."
-            exit 0
-          fi
-      
+      - name: Export Next.js static site 📦
+        run: npx next export
+
+      - name: List files in the directory
+        run: ls -la 
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
