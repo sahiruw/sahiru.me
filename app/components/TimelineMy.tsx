@@ -7,7 +7,7 @@ export default function TimelineDemo() {
       title: "2023 Dec - 2024 May",
       content: (
         <div>
-          <h3 className="text-lg md:text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
+          <h3 className="text-lg md:text-xl font-semibold text-blue-500 mb-2">
             GTN Technologies
           </h3>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal">
@@ -20,7 +20,7 @@ export default function TimelineDemo() {
       title: "2021 Aug - Present",
       content: (
         <div>
-          <h3 className="text-lg md:text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
+          <h3 className="text-lg md:text-xl font-semibold text-blue-500 mb-2">
             University of Moratuwa - Faculty of Engineering
           </h3>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal">
@@ -33,7 +33,7 @@ export default function TimelineDemo() {
       title: "2019 Dec - Present",
       content: (
         <div>
-          <h3 className="text-lg md:text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
+          <h3 className="text-lg md:text-xl font-semibold text-blue-500 mb-2">
             Freelance Developer - Apps Script & VBA
           </h3>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal">
@@ -46,7 +46,7 @@ export default function TimelineDemo() {
       title: "2019 Sep - 2020 Jan",
       content: (
         <div>
-          <h3 className="text-lg md:text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
+          <h3 className="text-lg md:text-xl font-semibold text-blue-500 mb-2">
             Innodate Lanka Pvt Ltd
           </h3>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal">
@@ -59,7 +59,7 @@ export default function TimelineDemo() {
       title: "2019",
       content: (
         <div>
-          <h3 className="text-lg md:text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
+          <h3 className="text-lg md:text-xl font-semibold text-blue-500 mb-2">
             Richmond College
           </h3>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal">
