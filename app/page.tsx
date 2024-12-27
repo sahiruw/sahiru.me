@@ -14,7 +14,7 @@ function Home() {
       {/* <Navbar /> */}
       <div className="video-container blur-sm z-0 relative">
         <video preload="auto" autoPlay loop playsInline muted className="absolute inset-0 w-full h-full object-cover">
-          <source src="/back.mp4" type="video/mp4" />
+          <source src="https://io9t4o4ldkx4egfm.public.blob.vercel-storage.com/back-fPpoyiyAZ9kkG6ZnS2EoLNdLS3Vb9z.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black opacity-60"></div>
