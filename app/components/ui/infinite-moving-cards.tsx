@@ -2,7 +2,7 @@
 
 import { cn } from "../../lib/utils";
 import React, { useEffect, useState } from "react";
-import ReactStars from "react-rating-stars-component";
+import Rating from '@mui/material/Rating';
 
 
 export const InfiniteMovingCards = ({
@@ -105,7 +105,7 @@ export const InfiniteMovingCards = ({
               <div className="relative z-20 mt-6 flex flex-row items-center">
                 <span className="flex flex-col gap-1">
                 <span className=" text-sm leading-[1.6] text-gray-400 font-normal">
-                    <ReactStars count={5} value={item.rating} size={24} activeColor="#ffd700" isHalf={true} edit={false}/>
+                    <Rating name="half-rating-read" defaultValue={item.rating} precision={0.5} readOnly />
                   </span>
                   <span className=" text-sm leading-[1.6] text-gray-400 font-normal">
                     {item.clientName}
