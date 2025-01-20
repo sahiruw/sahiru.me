@@ -3,7 +3,7 @@ import { projects } from "./projects";
 
 // To handle a GET request to /api
 export async function GET(request: Request): Promise<NextResponse> {
-    const { searchParams } = new URL(request.url);
+    const { searchParams } = request.nextUrl;
     const count = searchParams.get('count');
     const numProjects = count ? parseInt(count, 10) : projects.length;
 
