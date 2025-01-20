@@ -4,11 +4,10 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  distDir: "build",
   images: {
     domains: ['assets.aceternity.com'],
   },
-  output: 'export',
+  // output: 'export',
 };
 
 export default nextConfig;
