@@ -2,8 +2,9 @@
 // components/ProjectShowcase.js
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from '../../styles/ProjectShowcase.module.css';
-import {GithubButton} from "./projects/Buttons"
+import { GithubButton } from './projects/Buttons';
 
 interface Project {
     id: number;
@@ -26,64 +27,55 @@ const ProjectShowcase = () => {
     }, []);
 
     return (
-        <div className="py-20">
-            <h1 className="text-2xl text-center text-white my-10">Recent Projects</h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-8">
-                {projects.map((project) => (
-                    <div
-                    key={project.id}
-                    className={`relative group ${styles.projectCard} flex flex-col items-center justify-center`}
-                  >
-                    <img
-                      src={project.imageUrl}
-                      alt={project.title}
-                      className={`w-full h-full object-cover`}
-                    />
-                    
-                    <div className="absolute inset-0 bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-center items-center text-white p-4">
-                    <h2 className="text-2xl font-bold mb-2 text-blue-500 text-center">{project.title}</h2>
+        <section className="py-20">
+            <div className="max-w-7xl mx-auto px-6">
+                <h1 className="text-3xl md:text-4xl text-center text-white font-bold mb-4">Recent Projects</h1>
+                <p className="text-center text-sm text-neutral-300 mb-8 max-w-3xl mx-auto">
+                    A curated selection of recent work — click through to see project details and source where available.
+                </p>
 
-                      <p className="text-base mb-2">{project.category}</p>
-                      <p className="text-xs text-center mb-4">{project.shortDescription}</p>
-                      <ul className="flex flex-wrap justify-center gap-2 mb-4">
-                        {project.tags.map((tag, index) => (
-                          <li
-                            key={index}
-                            className="bg-gray-700 px-2 py-1 rounded text-xs"
-                          >
-                            {tag}
-                          </li>
+                {projects.length === 0 ? (
+                    <div className="text-center text-neutral-400 py-20">No projects available at the moment.</div>
+                ) : (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        {projects.map((project) => (
+                            <article key={project.id} className="relative group">
+                                <div className={`${styles.projectCard} rounded-lg overflow-hidden`}>
+                                    <Image src={project.imageUrl} alt={project.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
+                                    <div className="gradientOverlay" />
+                                </div>
+
+                                <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div className="bg-black/70 backdrop-blur-md rounded-lg p-4">
+                                        <h2 className="text-lg font-semibold text-white truncate">{project.title}</h2>
+                                        <p className="text-xs text-neutral-300 mt-1">{project.category}</p>
+                                        <p className="text-sm text-neutral-200 mt-2 line-clamp-3">{project.shortDescription}</p>
+
+                                        <div className="mt-3 flex flex-wrap gap-2">
+                                            {project.tags.map((tag, index) => (
+                                                <span key={index} className="text-xs bg-white/10 px-2 py-1 rounded text-neutral-100">{tag}</span>
+                                            ))}
+                                        </div>
+
+                                        <div className="mt-4 flex items-center gap-3">
+                                            <Link href={`/projects/${project.id}`} className="inline-flex items-center px-3 py-1.5 bg-blue-500 text-white rounded text-xs hover:bg-blue-600 transition">View Project</Link>
+
+                                            {project.urls.map((link, i) => (
+                                                <GithubButton key={i} url={link.url} />
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
                         ))}
-                      </ul>
-                      <div className="flex gap-4">
-                        {/* {project.urls.map((link, index) => (
-                        //   <a
-                        //     key={index}
-                        //     href={link.url}
-                        //     target="_blank"
-                        //     rel="noopener noreferrer"
-                        //     className="bg-blue-500 text-white py-2 px-2 rounded hover:bg-blue-600 transition-colors text-xs"
-                        //   >
-                        //     {link.title}
-                        //   </a>
-                        <GithubButton key={index} url={link.url} />
-                        ))} */}
-                        <Link href={`/projects/${project.id}`}>
-                          <span className="bg-blue-500 text-white py-2 px-2 rounded hover:bg-blue-600 transition-colors text-xs">
-                            View Project
-                          </span>
+
+                        <Link href="/projects" className="flex items-center justify-center rounded-lg bg-gray-800 p-6 hover:bg-gray-700 transition">
+                            <span className="text-white text-lg font-semibold">See More Projects</span>
                         </Link>
-                      </div>
                     </div>
-                  </div>
-                ))}
-                <Link href="/projects">
-                    <div className="relative group w-full h-full bg-gray-800 flex items-center justify-center">
-                        <span className="text-white text-2xl font-bold">See More</span>
-                    </div>
-                </Link>
+                )}
             </div>
-        </div>
+        </section>
     );
 };
 
