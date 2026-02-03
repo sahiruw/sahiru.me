@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 import reviews from "../../fiverr_reviews.json";
 
 interface Review {
@@ -100,12 +101,73 @@ export default function ReviewPopups() {
     if (comment.length <= maxLength) return comment;
     return comment.slice(0, maxLength).trim() + "...";
   };
-
   const getStarCount = (value: unknown): number => {
     const num = Number(value);
     if (isNaN(num) || !isFinite(num)) return 5;
     return Math.max(0, Math.min(5, Math.floor(num)));
-  };  const handleMouseEnter = (id: number) => {
+  };
+
+  // Map country names to country codes for flag URLs
+  const countryNameToCode: { [key: string]: string } = {
+    "United States": "us",
+    "United Kingdom": "gb",
+    "Canada": "ca",
+    "Australia": "au",
+    "Germany": "de",
+    "France": "fr",
+    "Spain": "es",
+    "Italy": "it",
+    "Netherlands": "nl",
+    "Belgium": "be",
+    "Switzerland": "ch",
+    "Sweden": "se",
+    "Norway": "no",
+    "Denmark": "dk",
+    "Finland": "fi",
+    "Poland": "pl",
+    "Czech Republic": "cz",
+    "Austria": "at",
+    "Portugal": "pt",
+    "Greece": "gr",
+    "Ireland": "ie",
+    "New Zealand": "nz",
+    "India": "in",
+    "China": "cn",
+    "Japan": "jp",
+    "South Korea": "kr",
+    "Singapore": "sg",
+    "Malaysia": "my",
+    "Thailand": "th",
+    "Indonesia": "id",
+    "Philippines": "ph",
+    "Vietnam": "vn",
+    "Pakistan": "pk",
+    "Bangladesh": "bd",
+    "Brazil": "br",
+    "Mexico": "mx",
+    "Argentina": "ar",
+    "Chile": "cl",
+    "Colombia": "co",
+    "Peru": "pe",
+    "South Africa": "za",
+    "Egypt": "eg",
+    "Nigeria": "ng",
+    "Kenya": "ke",
+    "United Arab Emirates": "ae",
+    "Saudi Arabia": "sa",
+    "Israel": "il",
+    "Turkey": "tr",
+    "Russia": "ru",
+    "Ukraine": "ua",
+    "Hong Kong": "hk",
+    "Taiwan": "tw",
+  };
+
+  const getCountryCode = (countryName: string): string => {
+    return countryNameToCode[countryName] || countryName.toLowerCase().substring(0, 2);
+  };
+
+  const handleMouseEnter = (id: number) => {
     isHoveringRef.current = true;
     setActivePopups((prev) =>
       prev.map((p) => (p.id === id ? { ...p, isPaused: true } : p))
@@ -143,11 +205,19 @@ export default function ReviewPopups() {
               <span className="text-white/60 text-xs">Fiverr Review</span>
             </div>
             <p className="text-white/90 text-sm leading-relaxed mb-2">
-              "{truncateComment(review.comment)}"
-            </p>
+              "{truncateComment(review.comment)}"            </p>
             <div className="flex items-center justify-between">
               <span className="text-white/60 text-xs">— {review.username}</span>
-              <span className="text-white/40 text-xs">{review.reviewer_country}</span>
+              <div className="flex items-center gap-2">
+                <Image
+                  src={`https://flagcdn.com/w40/${getCountryCode(review.reviewer_country)}.png`}
+                  alt={review.reviewer_country}
+                  width={20}
+                  height={15}
+                  className="rounded-sm"
+                />
+                <span className="text-white/40 text-xs">{review.reviewer_country}</span>
+              </div>
             </div>
           </div>
         </div>

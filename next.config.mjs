@@ -5,7 +5,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ['assets.aceternity.com'],
+    domains: ['assets.aceternity.com', 'flagcdn.com'],
   },
   // output: 'export',
 };
