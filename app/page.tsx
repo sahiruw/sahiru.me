@@ -6,11 +6,13 @@ import About from './components/About';
 import HelloCard from './components/HelloCard';
 import LogoBar from './components/LogoBar';
 import Work from './components/Work';
+import ReviewPopups from './components/ReviewPopups';
 
 function Home() {
 
   return (
     <main className='bg-neutral-900 ' id='home'>
+      <ReviewPopups />
       {/* <Navbar /> */}
       <div className="video-container blur-sm z-0 relative">
         <video preload="auto" autoPlay loop playsInline muted className="absolute inset-0 w-full h-full object-cover">
