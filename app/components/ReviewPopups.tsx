@@ -13,7 +13,21 @@ interface Review {
 // Get reviews with meaningful comments (longer than 20 chars) and 4+ stars
 const goodReviews = reviews.reviews
   .filter((r) => r.comment && r.comment.length > 20 && r.value >= 4)
-  .slice(0, 50) as Review[];
+  .slice(0, 100) as Review[];
+
+// Create weighted array - longer reviews appear more often
+const getWeightedRandomReview = (): Review => {
+  // Weight by comment length (longer = higher weight)
+  const weights = goodReviews.map((r) => Math.pow(r.comment.length, 1.5));
+  const totalWeight = weights.reduce((sum, w) => sum + w, 0);
+  
+  let random = Math.random() * totalWeight;
+  for (let i = 0; i < goodReviews.length; i++) {
+    random -= weights[i];
+    if (random <= 0) return goodReviews[i];
+  }
+  return goodReviews[goodReviews.length - 1];
+};
 
 export default function ReviewPopups() {
   const [activePopups, setActivePopups] = useState<
@@ -26,7 +40,7 @@ export default function ReviewPopups() {
       // Don't show new popups while hovering
       if (isHoveringRef.current) return;
       
-      const review = goodReviews[Math.floor(Math.random() * goodReviews.length)];
+      const review = getWeightedRandomReview();
       const id = popupId++;
         // Random position - top right corner area
       const position = {
