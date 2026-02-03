@@ -4,6 +4,21 @@ import { Timeline } from "./ui/timeline";
 export default function TimelineDemo() {
   const data = [
     {
+      title: "2025 Jun - To Present",
+      content: (
+        <div>
+          <h3 className="text-lg md:text-xl font-semibold text-blue-500 mb-2">
+            Sysco Labs Pvt Ltd.
+          </h3>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal">
+            Working as a Software Engineer, focusing on backend systems and cloud-native solutions.
+        Involved in designing, developing, and maintaining scalable services with an emphasis on
+        reliability, performance, and clean architecture. 
+          </p>
+        </div>
+      ),
+    },
+    {
       title: "2023 Dec - 2024 May",
       content: (
         <div>
@@ -17,15 +32,15 @@ export default function TimelineDemo() {
       ),
     },
     {
-      title: "2021 Aug - Present",
+      title: "2021 Aug - 2025 Jun",
       content: (
         <div>
           <h3 className="text-lg md:text-xl font-semibold text-blue-500 mb-2">
             University of Moratuwa - Faculty of Engineering
           </h3>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal">
-            Currently pursuing my degree in Computer Science and Engineering.
-          </p>
+            <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal">
+            Graduated with a Bachelor of Science in Engineering (Hons) in Computer Science and Engineering (First Class), with a minor in Mathematics. Gained a strong foundation in computer science principles, software development, and engineering practices through coursework, projects, and internships.
+            </p>
         </div>
       ),
     },
