@@ -7,7 +7,7 @@ const Work = () => {
   return (
     <div id='work' className='bg-gradient-to-b to-[#0A1020] from-neutral-800  pb-40'>
       <RecentWork />
-      <Feedback />
+      {/* <Feedback /> */}
       <Clients />
       
     </div>

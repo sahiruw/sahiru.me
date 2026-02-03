@@ -16,7 +16,7 @@ const Feedback = () => {
         {
             id: 3,
             name: 'Cyntox',
-            logo: 'https://cyntox.com/hubfs/raw_assets/public/Cyntox/images/cyntox-logo.svg'
+            logo: '/clients/cyntox.png'
         },
         {
             id: 6,
@@ -42,7 +42,7 @@ const Feedback = () => {
     ]
 
     return (
-        <div className="flex flex-col items-center p-4 grayscale">
+        <div className="flex flex-col items-center p-4">
             <h1 className="text-2xl text-center text-white my-10">Trusted By</h1>  
             <div className="flex flex-wrap justify-center items-center ">
                 {clients.map((client) => (
