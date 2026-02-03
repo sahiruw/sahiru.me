@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from '../../styles/ProjectShowcase.module.css';
-
+import {GithubButton} from "./projects/Buttons"
 
 interface Project {
     id: number;
@@ -56,17 +56,23 @@ const ProjectShowcase = () => {
                         ))}
                       </ul>
                       <div className="flex gap-4">
-                        {project.urls.map((link, index) => (
-                          <a
-                            key={index}
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-blue-500 text-white py-2 px-2 rounded hover:bg-blue-600 transition-colors text-xs"
-                          >
-                            {link.title}
-                          </a>
-                        ))}
+                        {/* {project.urls.map((link, index) => (
+                        //   <a
+                        //     key={index}
+                        //     href={link.url}
+                        //     target="_blank"
+                        //     rel="noopener noreferrer"
+                        //     className="bg-blue-500 text-white py-2 px-2 rounded hover:bg-blue-600 transition-colors text-xs"
+                        //   >
+                        //     {link.title}
+                        //   </a>
+                        <GithubButton key={index} url={link.url} />
+                        ))} */}
+                        <Link href={`/projects/${project.id}`}>
+                          <span className="bg-blue-500 text-white py-2 px-2 rounded hover:bg-blue-600 transition-colors text-xs">
+                            View Project
+                          </span>
+                        </Link>
                       </div>
                     </div>
                   </div>
