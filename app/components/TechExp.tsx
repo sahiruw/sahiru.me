@@ -72,7 +72,7 @@ const TechStack = () => {
                         <div key={section.title}>
                             <div className="flex items-center justify-between">
                                 <h3 className="text-sm uppercase tracking-wide text-neutral-300 font-medium">{section.title}</h3>
-                                <span className="text-xs text-neutral-400">{section.items.length}</span>
+                                {/* <span className="text-xs text-neutral-400">{section.items.length}</span> */}
                             </div>
 
                             <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
@@ -82,9 +82,18 @@ const TechStack = () => {
                                         role="listitem"
                                         className="flex items-center gap-3 p-3 rounded-lg bg-white/5 hover:bg-white/7 transition transform hover:-translate-y-1 shadow-sm"
                                     >
-                                        <div className="flex-shrink-0 h-12 w-12 rounded-md bg-white/6 dark:bg-white/3 flex items-center justify-center border border-white/6 overflow-hidden">
-                                            <Image src={tech.logo} alt={`${tech.name} logo`} width={40} height={40} className="object-contain" />
+                                        <div className="flex-shrink-0 h-12 w-12 rounded-md bg-white/6 dark:bg-white/3 flex items-center justify-center  overflow-hidden">
+                                            <div className="relative h-10 w-full">
+                                                <Image
+                                                    src={tech.logo}
+                                                    alt={`${tech.name} logo`}
+                                                    fill
+                                                    className="object-contain"
+                                                />
+                                            </div>
                                         </div>
+
+
 
                                         <div className="min-w-0">
                                             <p className="text-sm font-medium truncate">{tech.name}</p>
