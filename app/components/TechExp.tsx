@@ -60,7 +60,7 @@ const techSections = [
 
 const TechStack = () => {
     return (
-        <section className="text-white px-6 pt-24 pb-20 bg-gradient-to-b from-[#0A1020] to-neutral-800">
+        <section className="text-white px-6 pt-24 pb-20 bg-gradient-to-b to-[#0A1020] from-neutral-800 ">
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl md:text-4xl text-center font-bold mb-2">Hands-On Experience</h2>
                 <p className="text-center text-sm text-neutral-300 mb-8 max-w-2xl mx-auto">

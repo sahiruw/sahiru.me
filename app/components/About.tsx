@@ -8,7 +8,7 @@ const About = () => {
     <div className='' id='about'>
       <MyDescription />
       <div id='timeline'><TimelineC /></div>
-      <TechExp />
+      
     </div>
   );
 };

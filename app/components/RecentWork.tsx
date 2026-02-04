@@ -27,7 +27,7 @@ const ProjectShowcase = () => {
     }, []);
 
     return (
-        <section className="py-20">
+        <section className="py-20 bg-gradient-to-b from-[#071025] to-neutral-800">
             <div className="max-w-7xl mx-auto px-6">
                 <h1 className="text-3xl md:text-4xl text-center text-white font-bold mb-4">Recent Projects</h1>
                 <p className="text-center text-sm text-neutral-300 mb-8 max-w-3xl mx-auto">
