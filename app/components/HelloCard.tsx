@@ -38,20 +38,21 @@ const HelloCard = () => {
                         }}
                     />
                 </span>
-            </span>
-            <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 mt-4 sm:mt-6 w-full sm:w-auto px-4 sm:px-0">
-                <button
-                    type="button"
+            </span>            <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 mt-4 sm:mt-6 w-full sm:w-auto px-4 sm:px-0">
+                <a
+                    href="/Sahiru 1.2.1.pdf"
+                    download
                     className="text-white bg-blue-500 hover:bg-gradient-to-bl focus:ring-1 focus:outline-none focus:ring-orange-200 rounded-lg text-sm px-4 py-2.5 sm:py-2 text-center w-full sm:w-auto"
                 >
                     Download CV
-                </button>
-                <button
-                    type="button"
+                </a><a
+                    href="https://wa.me/94772626113?text=Hi%20Sahiru%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect."
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-white bg-blue-500 hover:bg-gradient-to-bl focus:ring-1 focus:outline-none focus:ring-orange-200 rounded-lg text-sm px-4 py-2.5 sm:py-2 text-center w-full sm:w-auto"
                 >
                     Contact Me
-                </button>
+                </a>
             </div>
         </div>
     );
