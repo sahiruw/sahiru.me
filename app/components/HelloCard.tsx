@@ -10,15 +10,18 @@ const HelloCard = () => {
         "Genrative AI & ML",
         "Apps Script & VBA Automation",
     ];
-    const portraitUrl = '/me.png';
+    const portraitUrl = '/me3.png';
 
     return (
         <div 
             className="text-white absolute inset-0 flex flex-col items-center justify-center p-10 mb-20"
             
         >
-            {/* Uncomment the image if needed */}
-            {/* <img src={portraitUrl} alt="Sahiru Wijesinghe" className="max-h-60 my-2 -ml-3" /> */}
+            <img 
+                src={portraitUrl} 
+                alt="Sahiru Wijesinghe" 
+                className="w-32 h-32 md:w-60 md:h-60 rounded-full object-cover border-4 border-blue-500 shadow-lg mb-6 -pt-10" 
+            />
             <h1 className="text-4xl md:text-6xl font-bold text-center">
                 Hello, I&apos;m <span className="text-blue-500">Sahiru</span>
             </h1>
