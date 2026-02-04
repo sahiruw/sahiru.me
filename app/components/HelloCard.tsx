@@ -26,7 +26,7 @@ const HelloCard = () => {
                 Hello, I&apos;m <span className="text-blue-500">Sahiru</span>
             </h1>
             <span className="text-neutral-500 text-center mt-3 sm:mt-4">
-                <span className="text-base sm:text-xl md:text-2xl">A Computer Science & Engineering Undergraduate, Freelancer</span>
+                <span className="text-base sm:text-xl md:text-2xl">Software Engineer, Freelancer</span>
                 <p className='text-sm sm:text-base'>Passionate About</p>
                 <span className="text-neutral-300">
                     <Typewriter
@@ -38,14 +38,17 @@ const HelloCard = () => {
                         }}
                     />
                 </span>
-            </span>            <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 mt-4 sm:mt-6 w-full sm:w-auto px-4 sm:px-0">
+            </span>            
+            
+            <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 mt-4 sm:mt-6 w-full sm:w-auto px-4 sm:px-0">
                 <a
                     href="/Sahiru 1.2.1.pdf"
                     download
                     className="text-white bg-blue-500 hover:bg-gradient-to-bl focus:ring-1 focus:outline-none focus:ring-orange-200 rounded-lg text-sm px-4 py-2.5 sm:py-2 text-center w-full sm:w-auto"
                 >
                     Download CV
-                </a><a
+                </a>
+                <a
                     href="https://wa.me/94772626113?text=Hi%20Sahiru%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect."
                     target="_blank"
                     rel="noopener noreferrer"

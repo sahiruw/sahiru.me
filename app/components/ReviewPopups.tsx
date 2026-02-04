@@ -184,6 +184,7 @@ export default function ReviewPopups() {
     "Ukraine": "ua",
     "Hong Kong": "hk",
     "Taiwan": "tw",
+    "Sri Lanka": "lk",
   };
 
   const getCountryCode = (countryName: string): string => {
