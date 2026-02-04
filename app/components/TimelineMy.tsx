@@ -12,22 +12,42 @@ export default function TimelineDemo() {
               <h4 className="text-base md:text-lg font-semibold text-neutral-900 dark:text-neutral-100">
                 Software Engineer
               </h4>
-              <div className="text-sm text-blue-500 font-medium">Sysco Labs Pvt Ltd.</div>
+              <div className="text-sm text-blue-500 font-medium">
+                Sysco Labs Pvt Ltd. — SWMS
+              </div>
             </div>
           </div>
 
-          <p className="text-sm md:text-sm mt-3 text-neutral-700 dark:text-neutral-300">
-            Backend systems and cloud-native solutions. Design, develop, and maintain scalable
-            services with a focus on reliability, performance, and clean architecture.
+          <p className="text-sm mt-3 text-neutral-700 dark:text-neutral-300">
+            Backend engineering for large-scale supply chain systems. Building and integrating
+            high-throughput services with a strong emphasis on data integrity, reliability,
+            and operational resilience.
           </p>
 
           <ul className="mt-3 list-disc list-inside text-sm text-neutral-600 dark:text-neutral-400 space-y-1">
-            <li>Design and implement robust backend services and APIs.</li>
-            <li>Improve observability and automation for production systems.</li>
+            <li>
+              Built and integrated multiple SIGMA and BlueYonder interfaces using
+              <span className="font-medium"> Spring Boot, Kafka, PostgreSQL, and PL/pgSQL</span>,
+              handling complex data mapping, staging, and status workflows.
+            </li>
+            <li>
+              Designed automated purge and archival processes and authored supporting
+              <span className="font-medium"> Bash utilities</span> to improve operational efficiency.
+            </li>
+            <li>
+              Implemented unit and end-to-end tests using
+              <span className="font-medium"> JUnit and Cypress</span>,
+              improving confidence in critical data pipelines.
+            </li>
+            <li>
+              Contributed to production readiness through DR runbooks and
+              database performance optimization research.
+            </li>
           </ul>
         </div>
       ),
-    },
+    }
+    ,
     {
       title: "2023 Dec - 2024 May",
       content: (
@@ -36,21 +56,42 @@ export default function TimelineDemo() {
             <h4 className="text-base md:text-lg font-semibold text-neutral-900 dark:text-neutral-100">
               Software Engineering Intern
             </h4>
-            <div className="text-sm text-blue-500 font-medium">GTN Technologies — Platform Engineering</div>
+            <div className="text-sm text-blue-500 font-medium">
+              GTN Technologies — Platform Engineering
+            </div>
           </div>
 
           <p className="text-sm mt-3 text-neutral-700 dark:text-neutral-300">
-            Contributed to core platform development and internal tooling while working alongside the
-            Platform Engineering team.
+            Platform engineering internship focused on infrastructure automation,
+            CI/CD reliability, cloud security, and developer productivity for fintech systems.
           </p>
 
           <ul className="mt-3 list-disc list-inside text-sm text-neutral-600 dark:text-neutral-400 space-y-1">
-            <li>Developed features and automation to improve developer workflows.</li>
-            <li>Collaborated on platform reliability and CI/CD improvements.</li>
+            <li>
+              Enhanced CI pipelines with static code analysis and automated
+              <span className="font-medium"> DAST using OWASP ZAP</span>.
+            </li>
+            <li>
+              Optimized AWS resource usage by implementing policy-driven governance with
+              <span className="font-medium"> Cloud Custodian</span>.
+            </li>
+            <li>
+              Modularized and standardized infrastructure using
+              <span className="font-medium"> Terraform</span> for reusable IaC components.
+            </li>
+            <li>
+              Reduced AMI build times by <span className="font-medium">62.5%</span> through
+              <span className="font-medium"> Packer</span> optimizations.
+            </li>
+            <li>
+              Implemented <span className="font-medium">DORA metrics</span> and observability
+              dashboards using <span className="font-medium">Datadog</span>.
+            </li>
           </ul>
         </div>
       ),
-    },
+    }
+    ,
     {
       title: "2021 Aug - 2025 Jun",
       content: (
@@ -59,21 +100,41 @@ export default function TimelineDemo() {
             <h4 className="text-base md:text-lg font-semibold text-neutral-900 dark:text-neutral-100">
               B.Sc. Engineering (Hons) — Computer Science & Engineering
             </h4>
-            <div className="text-sm text-blue-500 font-medium">University of Moratuwa — Faculty of Engineering</div>
+            <div className="text-sm text-blue-500 font-medium">
+              University of Moratuwa — Faculty of Engineering
+            </div>
           </div>
 
           <p className="text-sm mt-3 text-neutral-700 dark:text-neutral-300">
-            Graduated with First Class honors and a minor in Mathematics. Focused on software
-            engineering principles, systems, and collaborative projects.
+            Graduated with <span className="font-medium">First Class Honors</span> (CGPA:{" "}
+            <span className="font-medium">3.73</span>) and a <span className="font-medium">Minor in Mathematics</span>.
+            Strong focus on software engineering, distributed systems, backend development,
+            and cloud-native architectures.
           </p>
 
           <ul className="mt-3 list-disc list-inside text-sm text-neutral-600 dark:text-neutral-400 space-y-1">
-            <li>Relevant coursework: algorithms, systems design, software engineering.</li>
-            <li>Capstone and team projects emphasizing practical software development.</li>
+            <li>
+              <span className="font-medium">Dean’s List:</span> Semesters 02, 06, 07, and 08
+            </li>
+            <li>
+              Relevant coursework: Algorithms, Data Structures, Systems Design,
+              Software Engineering, Databases
+            </li>
+            <li>
+              <span className="font-medium">Publication:</span> MERCon 2025 — Transformer-based intent
+              classification for automated software deployment plan generation
+            </li>
+            <li>
+              Competitive programming & engineering competitions:
+              IEEEXtreme 16.0 (Sri Lanka Rank 9, Global Rank 220),
+              Bashaway 2022 (Winners),
+              Code Squad V3.0 (Second Runners-Up)
+            </li>
           </ul>
         </div>
       ),
-    },
+    }
+    ,
     {
       title: "2019 Dec - Present",
       content: (
