@@ -119,7 +119,7 @@ const HelloCard = () => {
       </motion.div>
 
       {/* Trust Signal Cards */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 14 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.35 }}
@@ -156,7 +156,7 @@ const HelloCard = () => {
           <div className="font-serif font-bold text-base sm:text-xl" style={{ color: 'var(--amber)' }}>1st Class Hons</div>
           <div className="text-[11px] sm:text-xs mt-0.5 font-sans" style={{ color: 'var(--text-muted)' }}>Univ. of Moratuwa (3.73 GPA)</div>
         </div>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 };
