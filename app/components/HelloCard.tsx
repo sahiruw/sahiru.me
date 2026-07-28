@@ -22,7 +22,7 @@ const HelloCard = () => {
             src="/me3.png"
             alt="Sahiru Wijesinghe"
             fill
-            sizes="80px"
+            sizes="(max-width: 640px) 160px, 128px"
             className="object-cover object-top"
             priority
           />
