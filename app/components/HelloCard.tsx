@@ -8,7 +8,7 @@ const HelloCard = () => {
 
     return (
         <section className="relative z-10 min-h-[90vh] flex flex-col items-center justify-center px-4 py-16 sm:py-24 max-w-6xl mx-auto text-center">
-            
+
             {/* Top Pill - Differentiated Positioning */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs sm:text-sm font-medium mb-6 backdrop-blur-md animate-pulse">
                 <span className="flex h-2 w-2 rounded-full bg-blue-400"></span>
@@ -17,12 +17,13 @@ const HelloCard = () => {
 
             {/* Main Value Proposition Headline */}
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight sm:leading-none max-w-4xl">
-                I build <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-300">AI-powered business systems</span> that replace spreadsheets & automate operations.
+                I build <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-300">intelligent software systems</span> that replace spreadsheets & automate operations.
             </h1>
 
             {/* Supporting Subheadline focused on Outcomes */}
             <p className="mt-6 text-base sm:text-xl text-neutral-300 max-w-3xl font-normal leading-relaxed">
-                Helping mid-market companies and fast-scaling teams eliminate manual labor, streamline warehouse logistics, and build scalable cloud infrastructure. Save hundreds of hours every month.
+                I help growing companies eliminate manual workflows, modernize business
+                processes, and build scalable cloud platforms.
             </p>
 
             {/* Action Buttons (CTAs) */}

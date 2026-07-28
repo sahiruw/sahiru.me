@@ -6,11 +6,13 @@ import TechStack from './TechExp';
 import Process from './Process';
 import FAQ from './FAQ';
 import ContactSection from './ContactSection';
+import ProblemsSolved from './ProblemsSolved';
 
 const Work = () => {
   return (
     <div id='work' className='bg-[#0A1020]'>
       <Clients />
+      <ProblemsSolved />
       <Services />
       <RecentWork />
       <TechStack />

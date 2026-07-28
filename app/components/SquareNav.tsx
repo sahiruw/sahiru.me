@@ -4,6 +4,7 @@ import { FloatingDock } from "./ui/floating-dock";
 
 import {
   IoHomeOutline,
+  IoWarningOutline,
   IoConstructOutline,
   IoBriefcaseOutline,
   IoGitNetworkOutline,
@@ -19,6 +20,13 @@ export default function FloatingDockDemo() {
         <IoHomeOutline className="h-full w-full text-neutral-300" />
       ),
       href: "#home",
+    },
+    {
+      title: "Problems Solved",
+      icon: (
+        <IoWarningOutline className="h-full w-full text-neutral-300" />
+      ),
+      href: "#problems",
     },
     {
       title: "Services",
@@ -49,7 +57,7 @@ export default function FloatingDockDemo() {
       href: "#faq",
     },
     {
-      title: "Book / Contact",
+      title: "Discuss Project",
       icon: (
         <IoCallOutline className="h-full w-full text-neutral-300" />
       ),
