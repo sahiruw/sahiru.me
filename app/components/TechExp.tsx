@@ -4,97 +4,87 @@ import Image from 'next/image';
 
 const serviceStacks = [
     {
-        title: "AI & Vector Engineering",
-        subtitle: "RAG architectures, Agentic workflows, and LLM automation",
+        title: "AI & Automation",
+        subtitle: "LLM API integrations, document processing, and smart workflow tools",
         items: [
-            { name: 'LangChain & RAG', logo: '/logo/python.png' },
-            { name: 'Vector Databases', logo: '/logo/python.png' },
-            { name: 'LLM APIs (Gemini/OpenAI)', logo: '/logo/python.png' },
+            { name: 'OpenAI / Gemini APIs', logo: '/logo/python.png' },
+            { name: 'LangChain', logo: '/logo/python.png' },
             { name: 'FastAPI', logo: '/logo/fastapi.webp' },
             { name: 'Python', logo: '/logo/python.png' },
         ]
     },
     {
-        title: "Backend & Systems Engineering",
-        subtitle: "High-throughput APIs, event-driven pipelines, and relational DBs",
+        title: "Backend & Web Apps",
+        subtitle: "Full-stack web apps and APIs powering custom business tools",
         items: [
-            { name: 'Java / Spring Boot', logo: '/logo/java.png' },
-            { name: 'JavaScript / TypeScript', logo: '/logo/js-ts.jpg' },
+            { name: 'TypeScript / Node', logo: '/logo/js-ts.jpg' },
             { name: 'Express / NestJS', logo: '/logo/express.webp' },
+            { name: 'React / Next.js', logo: '/logo/nextjs.png' },
             { name: 'PostgreSQL & MySQL', logo: '/logo/mysql.png' },
-            { name: 'Redis Caching', logo: '/logo/redis.png' },
-        ]
-    },
-    {
-        title: "Cloud & DevOps Automation",
-        subtitle: "Infrastructure-as-Code, container orchestration, and security",
-        items: [
-            { name: 'AWS Cloud', logo: '/logo/aws.png' },
-            { name: 'Terraform (IaC)', logo: '/logo/tf.png' },
-            { name: 'Docker Containers', logo: '/logo/docker.webp' },
-            { name: 'Packer & AMIs', logo: '/logo/packer.png' },
-            { name: 'Cloud Custodian', logo: '/logo/cc.png' },
-            { name: 'OWASP ZAP DAST', logo: '/logo/zap.png' },
-        ]
-    },
-    {
-        title: "Internal Tools & Business Automation",
-        subtitle: "Modern React web applications and spreadsheet automation engines",
-        items: [
-            { name: 'ReactJS / NextJS', logo: '/logo/nextjs.png' },
-            { name: 'Google Apps Script', logo: '/logo/apps-script.png' },
-            { name: 'VBA Automation', logo: '/logo/vba.png' },
-            { name: 'Bash Scripting', logo: '/logo/bash.png' },
             { name: 'Firebase', logo: '/logo/firebase.png' },
+        ]
+    },
+    {
+        title: "Spreadsheet & Automation",
+        subtitle: "Google Sheets, Excel, and scripting tools for fast automation",
+        items: [
+            { name: 'Google Apps Script', logo: '/logo/apps-script.png' },
+            { name: 'Excel VBA', logo: '/logo/vba.png' },
+            { name: 'Bash Scripting', logo: '/logo/bash.png' },
+            { name: 'Java / Spring Boot', logo: '/logo/java.png' },
         ]
     }
 ];
 
 const TechStack = () => {
     return (
-        <section className="py-24 bg-[#070D1B] border-t border-white/5 relative z-10">
+        <section
+            className="py-24 relative z-10 border-t"
+            style={{ borderColor: 'var(--border)', background: 'var(--bg-muted)' }}
+            id="tech"
+        >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
+
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <span className="text-blue-400 font-semibold text-xs sm:text-sm tracking-wider uppercase bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">
-                        Battle-Tested Tooling
+                    <span
+                        className="text-xs font-mono font-semibold tracking-wider uppercase px-3 py-1 rounded-full border"
+                        style={{ color: 'var(--amber)', borderColor: 'var(--amber)', background: 'var(--amber-light)' }}
+                    >
+                        Tools of the Trade
                     </span>
-                    <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-4 tracking-tight">
-                        Technology Stack by Service Domain
+                    <h2 className="text-3xl sm:text-4xl font-bold font-serif mt-4 tracking-tight" style={{ color: 'var(--text)' }}>
+                        Tech I Work With
                     </h2>
-                    <p className="text-neutral-400 text-sm sm:text-base mt-3">
-                        Proven enterprise frameworks, databases, and automation tooling used to deliver scalable systems.
+                    <p className="text-base sm:text-lg mt-4 leading-relaxed font-sans" style={{ color: 'var(--text-muted)' }}>
+                        Tools I use to get things done - picked for the job, not for the resume.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {serviceStacks.map((stack, idx) => (
-                        <div 
+                        <div
                             key={idx}
-                            className="p-6 sm:p-8 rounded-2xl bg-white/[0.02] border border-white/10"
+                            className="p-6 sm:p-8 rounded-2xl border"
+                            style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
                         >
-                            <h3 className="text-lg sm:text-xl font-bold text-white mb-1">
+                            <h3 className="text-xl font-bold font-serif mb-1" style={{ color: 'var(--text)' }}>
                                 {stack.title}
                             </h3>
-                            <p className="text-xs text-neutral-400 mb-6">
+                            <p className="text-xs mb-6 font-sans" style={{ color: 'var(--text-faint)' }}>
                                 {stack.subtitle}
                             </p>
 
-                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                            <div className="grid grid-cols-2 gap-3">
                                 {stack.items.map((tech) => (
                                     <div
                                         key={tech.name}
-                                        className="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/5 border border-white/5 hover:border-blue-500/30 hover:bg-white/10 transition-all duration-200"
+                                        className="flex items-center gap-2.5 p-2.5 rounded-xl border transition-all duration-200"
+                                        style={{ background: 'var(--bg-muted)', borderColor: 'var(--border)' }}
                                     >
-                                        <div className="h-7 w-7 rounded-lg bg-white/10 flex items-center justify-center overflow-hidden flex-shrink-0 relative">
-                                            <Image
-                                                src={tech.logo}
-                                                alt={tech.name}
-                                                fill
-                                                className="object-contain p-1"
-                                            />
+                                        <div className="h-7 w-7 rounded-lg flex items-center justify-center overflow-hidden flex-shrink-0 relative" style={{ background: 'var(--bg-card)' }}>
+                                            <Image src={tech.logo} alt={tech.name} fill className="object-contain p-1" />
                                         </div>
-                                        <span className="text-xs font-medium text-neutral-200 truncate">
+                                        <span className="text-xs font-mono font-medium truncate" style={{ color: 'var(--text-muted)' }}>
                                             {tech.name}
                                         </span>
                                     </div>

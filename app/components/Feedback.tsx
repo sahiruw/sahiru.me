@@ -107,7 +107,7 @@ const reviewsPerPage = 2;
 const Feedback = () => {
   return (
     <div className="rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
-      <h1 className="text-4xl text-center font-bold my-10 text-white">
+      <h1 className="text-4xl text-center font-bold font-serif my-10" style={{ color: 'var(--text)' }}>
         What My Clients Say
       </h1>
       <InfiniteMovingCards items={reviews} direction="left" speed="slow" />

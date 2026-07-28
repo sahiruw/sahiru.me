@@ -1,24 +1,18 @@
 'use client';
 import React, { useState } from 'react';
-import { FaCalendarCheck, FaEnvelope, FaPaperPlane, FaWhatsapp, FaCheckCircle, FaLock } from 'react-icons/fa';
+import { FaCalendarCheck, FaEnvelope, FaPaperPlane, FaWhatsapp, FaCheckCircle } from 'react-icons/fa';
+import { LuClock, LuDollarSign, LuUserCheck } from 'react-icons/lu';
 
 const ContactSection = () => {
     const [budget, setBudget] = useState<string>('$15k - $30k');
     const [selectedServices, setSelectedServices] = useState<string[]>(['AI Automation']);
     const [submitted, setSubmitted] = useState<boolean>(false);
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        company: '',
-        description: ''
-    });
+    const [formData, setFormData] = useState({ name: '', email: '', company: '', description: '' });
 
     const toggleService = (service: string) => {
-        if (selectedServices.includes(service)) {
-            setSelectedServices(selectedServices.filter(s => s !== service));
-        } else {
-            setSelectedServices([...selectedServices, service]);
-        }
+        setSelectedServices(prev =>
+            prev.includes(service) ? prev.filter(s => s !== service) : [...prev, service]
+        );
     };
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -26,91 +20,105 @@ const ContactSection = () => {
         setSubmitted(true);
     };
 
-    const servicesList = [
-        "AI Automation & RAG",
-        "Internal Web Application",
-        "Cloud & DevOps Infrastructure",
-        "High-Throughput APIs",
-        "Excel / Sheet Modernization"
-    ];
+    const servicesList = ["AI Automation & RAG", "Internal Web Application", "Cloud & DevOps", "High-Throughput APIs", "Spreadsheet Modernization"];
+    const budgetRanges = ["$5k - $15k", "$15k - $30k", "$30k - $50k+"];
 
-    const budgetRanges = [
-        "$5k - $15k",
-        "$15k - $30k",
-        "$30k - $50k+"
-    ];
+    const inputStyle = {
+        width: '100%',
+        padding: '12px 16px',
+        borderRadius: '12px',
+        border: '1px solid var(--border)',
+        background: 'var(--bg)',
+        color: 'var(--text)',
+        fontSize: '14px',
+        outline: 'none',
+    } as React.CSSProperties;
 
     return (
-        <section className="py-24 bg-[#0A1020] border-t border-white/5 relative z-10" id="contact">
+        <section
+            className="py-24 relative z-10 border-t"
+            style={{ borderColor: 'var(--border)', background: 'var(--bg)' }}
+            id="contact"
+        >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
+
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                    
-                    {/* Left Column: Value Prop & Lead Magnet */}
-                    <div className="lg:col-span-5">
-                        <span className="text-blue-400 font-semibold text-xs sm:text-sm tracking-wider uppercase bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">
-                            Start Your Project
+
+                    {/* Left column */}
+                    <div className="lg:col-span-5 space-y-6">
+                        <span
+                            className="text-xs font-mono font-semibold tracking-wider uppercase px-3 py-1 rounded-full border"
+                            style={{ color: 'var(--amber)', borderColor: 'var(--amber)', background: 'var(--amber-light)' }}
+                        >
+                            Initiate Collaboration
                         </span>
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mt-4 tracking-tight leading-tight">
-                            Let&apos;s Build Something Scalable Together.
+
+                        <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight leading-tight" style={{ color: 'var(--text)' }}>
+                            Ready to Eliminate Operational Bottlenecks?
                         </h2>
-                        <p className="text-neutral-300 text-base mt-4 leading-relaxed">
-                            Have a spreadsheet workflow that needs converting, an AI system to build, or cloud infrastructure to automate? Schedule a call or submit your project details below.
+
+                        <p className="text-base leading-relaxed font-sans" style={{ color: 'var(--text-muted)' }}>
+                            Whether you need to convert fragile spreadsheet workflows, build custom AI pipelines, or architect enterprise backend services, let&apos;s map out your solution.
                         </p>
 
-                        {/* Free Consultation Callout Card */}
-                        <div className="mt-8 p-6 rounded-2xl bg-blue-950/30 border border-blue-500/30 backdrop-blur-md">
-                            <div className="flex items-center gap-3 mb-2">
-                                <FaCalendarCheck className="text-blue-400 text-xl" />
-                                <h3 className="text-lg font-bold text-white">
-                                    Free 30-Min Architecture Consultation
-                                </h3>
+                        {/* Strategy call card */}
+                        <div className="p-6 rounded-2xl border space-y-4" style={{ background: 'var(--bg-card)', borderColor: 'var(--amber)' }}>
+                            <div className="flex items-center gap-3">
+                                <div className="p-2.5 rounded-xl border" style={{ background: 'var(--amber-light)', color: 'var(--amber)', borderColor: 'var(--amber)' }}>
+                                    <FaCalendarCheck className="text-lg" />
+                                </div>
+                                <div>
+                                    <h3 className="text-lg font-bold font-serif" style={{ color: 'var(--text)' }}>Free 30-Min Strategy Call</h3>
+                                    <div className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>Direct 1-on-1 with Sahiru</div>
+                                </div>
                             </div>
-                            <p className="text-xs text-neutral-300 leading-relaxed mb-4">
-                                No obligation. We will review your current technical bottleneck, evaluate spreadsheet workflows, and outline a high-level system architecture.
+                            <p className="text-xs leading-relaxed font-sans" style={{ color: 'var(--text-muted)' }}>
+                                Zero pressure. We evaluate your current workflow, spot bottlenecks, and design a custom architecture outline.
                             </p>
                             <a
                                 href="https://wa.me/94772626113?text=Hi%20Sahiru%2C%20I%20would%20like%20to%20schedule%20a%20free%2030-minute%20architecture%20consultation."
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-all shadow-lg shadow-blue-600/30"
+                                className="inline-flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-xl font-semibold text-sm transition-all"
+                                style={{ background: 'var(--amber)', color: '#fff' }}
                             >
                                 <FaWhatsapp className="text-lg" />
-                                Book Call via WhatsApp / Direct
+                                <span>Book via WhatsApp</span>
                             </a>
                         </div>
 
-                        {/* Quick Contact Info */}
-                        <div className="mt-8 space-y-3 text-xs text-neutral-400">
-                            <div className="flex items-center gap-2">
-                                <FaEnvelope className="text-blue-400" />
-                                <span>Direct Email: <a href="mailto:contact@sahiru.me" className="text-white hover:underline">contact@sahiru.me</a></span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <FaLock className="text-blue-400" />
-                                <span>NDA Compliant & Strict Confidentiality Guaranteed</span>
-                            </div>
+                        {/* Guarantees */}
+                        <div className="p-5 rounded-2xl border space-y-3" style={{ background: 'var(--bg-muted)', borderColor: 'var(--border)' }}>
+                            <h4 className="text-xs font-mono font-bold uppercase tracking-wider" style={{ color: 'var(--text-faint)' }}>Engagement Guarantees:</h4>
+                            {[
+                                { icon: LuClock, text: <><strong>48-Hour Response SLA</strong> · Fast turnaround on inquiries & RFPs.</> },
+                                { icon: LuDollarSign, text: <><strong>Fixed-Fee Quotes</strong> · Clear scope with zero billing surprises.</> },
+                                { icon: LuUserCheck, text: <><strong>Direct Engineer Access</strong> · Work directly with me - no middlemen.</> },
+                            ].map(({ icon: Icon, text }, i) => (
+                                <div key={i} className="flex items-center gap-2.5 text-xs font-sans" style={{ color: 'var(--text-muted)' }}>
+                                    <Icon className="text-sm flex-shrink-0" style={{ color: 'var(--amber)' }} />
+                                    <span>{text}</span>
+                                </div>
+                            ))}
                         </div>
-
                     </div>
 
-                    {/* Right Column: High-Converting Project Intake Form */}
-                    <div className="lg:col-span-7 p-6 sm:p-8 rounded-3xl bg-white/[0.02] border border-white/10 backdrop-blur-md">
+                    {/* Right column: Intake form */}
+                    <div className="lg:col-span-7 p-6 sm:p-8 rounded-3xl border" style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}>
                         {submitted ? (
-                            <div className="text-center py-12">
-                                <FaCheckCircle className="text-emerald-400 text-5xl mx-auto mb-4" />
-                                <h3 className="text-2xl font-bold text-white mb-2">Project Submission Received!</h3>
-                                <p className="text-neutral-300 text-sm max-w-md mx-auto">
-                                    Thank you for reaching out. I will review your project details and respond within 12 hours with initial architecture notes.
+                            <div className="text-center py-12 space-y-4">
+                                <FaCheckCircle className="text-5xl mx-auto" style={{ color: 'var(--amber)' }} />
+                                <h3 className="text-2xl font-bold font-serif" style={{ color: 'var(--text)' }}>Inquiry Received!</h3>
+                                <p className="text-sm max-w-md mx-auto font-sans leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+                                    I&apos;ll review your details and reply within 12–24 hours with initial architecture notes.
                                 </p>
                             </div>
                         ) : (
                             <form onSubmit={handleSubmit} className="space-y-6">
-                                
-                                {/* Services Selection */}
+
                                 <div>
-                                    <label className="block text-xs font-semibold text-neutral-300 uppercase tracking-wider mb-3">
-                                        I Need Help With (Select all that apply):
+                                    <label className="block text-xs font-mono font-semibold uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
+                                        Project Scope (select all that apply):
                                     </label>
                                     <div className="flex flex-wrap gap-2">
                                         {servicesList.map((service) => {
@@ -120,11 +128,11 @@ const ContactSection = () => {
                                                     type="button"
                                                     key={service}
                                                     onClick={() => toggleService(service)}
-                                                    className={`px-3 py-2 rounded-xl text-xs font-medium transition-all ${
-                                                        isSelected
-                                                            ? 'bg-blue-600 text-white border border-blue-500'
-                                                            : 'bg-white/5 text-neutral-400 border border-white/5 hover:text-white'
-                                                    }`}
+                                                    className="px-3 py-2 rounded-xl text-xs font-medium transition-all border"
+                                                    style={isSelected
+                                                        ? { background: 'var(--amber)', color: '#fff', borderColor: 'var(--amber)', fontWeight: 600 }
+                                                        : { background: 'var(--bg-muted)', color: 'var(--text-muted)', borderColor: 'var(--border)' }
+                                                    }
                                                 >
                                                     {service}
                                                 </button>
@@ -133,10 +141,9 @@ const ContactSection = () => {
                                     </div>
                                 </div>
 
-                                {/* Budget Range */}
                                 <div>
-                                    <label className="block text-xs font-semibold text-neutral-300 uppercase tracking-wider mb-3">
-                                        Estimated Project Budget:
+                                    <label className="block text-xs font-mono font-semibold uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
+                                        Budget Range:
                                     </label>
                                     <div className="grid grid-cols-3 gap-2">
                                         {budgetRanges.map((range) => (
@@ -144,11 +151,11 @@ const ContactSection = () => {
                                                 type="button"
                                                 key={range}
                                                 onClick={() => setBudget(range)}
-                                                className={`py-2.5 rounded-xl text-xs font-medium transition-all text-center ${
-                                                    budget === range
-                                                        ? 'bg-blue-600 text-white border border-blue-500'
-                                                        : 'bg-white/5 text-neutral-400 border border-white/5 hover:text-white'
-                                                }`}
+                                                className="py-2.5 rounded-xl text-xs font-medium transition-all border"
+                                                style={budget === range
+                                                    ? { background: 'var(--amber)', color: '#fff', borderColor: 'var(--amber)', fontWeight: 600 }
+                                                    : { background: 'var(--bg-muted)', color: 'var(--text-muted)', borderColor: 'var(--border)' }
+                                                }
                                             >
                                                 {range}
                                             </button>
@@ -156,62 +163,41 @@ const ContactSection = () => {
                                     </div>
                                 </div>
 
-                                {/* Form Input Fields */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label className="block text-xs text-neutral-400 mb-1">Your Name *</label>
-                                        <input
-                                            type="text"
-                                            required
-                                            value={formData.name}
-                                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                            placeholder="e.g. John Smith"
-                                            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-blue-500"
-                                        />
+                                        <label className="block text-xs mb-1" style={{ color: 'var(--text-faint)' }}>Your Name *</label>
+                                        <input type="text" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="Alex Morgan" style={inputStyle} />
                                     </div>
-
                                     <div>
-                                        <label className="block text-xs text-neutral-400 mb-1">Work Email *</label>
-                                        <input
-                                            type="email"
-                                            required
-                                            value={formData.email}
-                                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                            placeholder="john@company.com"
-                                            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-blue-500"
-                                        />
+                                        <label className="block text-xs mb-1" style={{ color: 'var(--text-faint)' }}>Work Email *</label>
+                                        <input type="email" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} placeholder="alex@company.com" style={inputStyle} />
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label className="block text-xs text-neutral-400 mb-1">Company / Website</label>
-                                    <input
-                                        type="text"
-                                        value={formData.company}
-                                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                                        placeholder="Company Name or URL"
-                                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-blue-500"
-                                    />
+                                    <label className="block text-xs mb-1" style={{ color: 'var(--text-faint)' }}>Company / Website</label>
+                                    <input type="text" value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })} placeholder="Acme Corp" style={inputStyle} />
                                 </div>
 
                                 <div>
-                                    <label className="block text-xs text-neutral-400 mb-1">Project Description & Outcomes *</label>
+                                    <label className="block text-xs mb-1" style={{ color: 'var(--text-faint)' }}>Project Details & Pain Points *</label>
                                     <textarea
                                         rows={4}
                                         required
                                         value={formData.description}
                                         onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                                        placeholder="Describe the business problem, current workflow, or desired feature set..."
-                                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-blue-500"
+                                        placeholder="Describe the current operational bottleneck or goals..."
+                                        style={{ ...inputStyle, resize: 'vertical' }}
                                     />
                                 </div>
 
                                 <button
                                     type="submit"
-                                    className="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm transition-all shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2"
+                                    className="w-full py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all"
+                                    style={{ background: 'var(--amber)', color: '#fff' }}
                                 >
                                     <FaPaperPlane className="text-xs" />
-                                    Submit Project Inquiry
+                                    <span>Submit Project Inquiry</span>
                                 </button>
 
                             </form>
@@ -219,7 +205,6 @@ const ContactSection = () => {
                     </div>
 
                 </div>
-
             </div>
         </section>
     );

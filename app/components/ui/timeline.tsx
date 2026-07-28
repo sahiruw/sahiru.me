@@ -41,7 +41,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           Experience & Education
         </h1>
         <p className="text-center text-sm text-neutral-300 mt-2 max-w-2xl mx-auto">
-          Selected roles, projects, and academic highlights — concise and focused.
+          Selected roles, projects, and academic highlights - concise and focused.
         </p>
       </div>
 

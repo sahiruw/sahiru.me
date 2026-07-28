@@ -1,22 +1,28 @@
 import React from 'react';
 
-const Feedback = () => {
+const MyDescription = () => {
     return (
-        <div className="flex flex-col justify-center items-center bg-gradient-to-b from-[#0A1020] to-neutral-950 px-4 sm:px-6 py-16 sm:py-24">
-            <p className="text-white text-center text-lg sm:text-xl md:text-2xl leading-relaxed max-w-4xl">
-                <span className="text-blue-500">Computer Science Engineer</span> from the{' '}
-                <span className="text-blue-500">University of Moratuwa</span>, currently working as a{' '}
-                <span className="text-blue-500">Software Engineer</span> at{' '}
-                <span className="text-blue-500">Sysco Labs</span>. I specialize in{' '}
-                <span className="text-blue-500">Backend Development</span>,{' '}
-                <span className="text-blue-500">Cloud Engineering</span>, and{' '}
-                <span className="text-blue-500">DevOps</span> — transforming complex challenges into elegant, scalable solutions.
+        <section
+            className="flex flex-col justify-center items-center px-4 sm:px-6 py-16 sm:py-24 border-t"
+            style={{ borderColor: 'var(--border)', background: 'var(--bg-muted)' }}
+        >
+            <p
+                className="text-center text-lg sm:text-xl md:text-2xl leading-relaxed max-w-4xl font-sans"
+                style={{ color: 'var(--text-muted)' }}
+            >
+                <span style={{ color: 'var(--amber)', fontWeight: 600 }}>Computer Science Engineer</span> from the{' '}
+                <span style={{ color: 'var(--amber)', fontWeight: 600 }}>University of Moratuwa</span>, working as a{' '}
+                <span style={{ color: 'var(--amber)', fontWeight: 600 }}>Software Engineer</span> at{' '}
+                <span style={{ color: 'var(--amber)', fontWeight: 600 }}>Sysco Labs</span>. On the side, I build spreadsheet automations, web apps, and AI integrations for people who have a real problem to solve.
             </p>
-            <p className="text-white text-center text-xs sm:text-sm leading-relaxed max-w-4xl mt-8 sm:mt-16 opacity-75">
-                Driven by curiosity and a passion for continuous learning, I thrive on collaboration and bringing innovative ideas to every project. My mission is to leverage technology to create meaningful impact and build solutions that improve lives.
+            <p
+                className="text-center text-xs sm:text-sm leading-relaxed max-w-4xl mt-8 font-sans"
+                style={{ color: 'var(--text-faint)' }}
+            >
+                Outside work, I enjoy taking on freelance projects - helping a solo founder tidy up their data, building a small tool for a local business, or adding AI to something that could genuinely benefit from it. If you have a problem, just reach out.
             </p>
-        </div>
+        </section>
     );
-}
+};
 
-export default Feedback;
+export default MyDescription;

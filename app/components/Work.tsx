@@ -10,7 +10,7 @@ import ProblemsSolved from './ProblemsSolved';
 
 const Work = () => {
   return (
-    <div id='work' className='bg-[#0A1020]'>
+    <div id="work">
       <Clients />
       <ProblemsSolved />
       <Services />
