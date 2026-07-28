@@ -1,38 +1,42 @@
 import Navbar from './components/SquareNav';
-import randomImage from "../assests/images.jpeg";
-import Image from "next/image";
-import { useEffect, useState } from 'react';
 import About from './components/About';
 import HelloCard from './components/HelloCard';
-import LogoBar from './components/LogoBar';
 import Work from './components/Work';
 import ReviewPopups from './components/ReviewPopups';
 
 function Home() {
-
   return (
-    <main className='bg-neutral-900 ' id='home'>
+    <main className='bg-[#0A1020] min-h-screen text-white relative overflow-hidden' id='home'>
+      {/* Dynamic Fiverr & Client Review Popups */}
       <ReviewPopups />
-      {/* <Navbar /> */}
-      <div className="video-container blur-sm z-0 relative">
-        <video preload="auto" autoPlay loop playsInline muted className="absolute inset-0 w-full h-full object-cover">
-          <source src="https://io9t4o4ldkx4egfm.public.blob.vercel-storage.com/output-JTBBiJYvzBZVh7Ty2uaHWBGuEZKNp6.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div className="absolute inset-0 bg-black opacity-60"></div>
 
-        <div className="absolute inset-0 bg-blue-900 opacity-20"></div>
-      </div>
+      {/* Subtle Dark Grid & Gradient Atmosphere Background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#1e293b_0,transparent_50%)] opacity-40 pointer-events-none"></div>
 
+      {/* Hero Section */}
       <HelloCard />
 
+      {/* Floating Dock Navigation */}
       <Navbar />
 
+      {/* Main Experience & Portfolio Sections */}
       <About />
       <Work />
 
-
-
+      {/* Footer */}
+      <footer className="py-12 border-t border-white/5 text-center text-xs text-neutral-500 bg-[#070D1B]">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            © {new Date().getFullYear()} Sahiru Wijesinghe. All rights reserved.
+          </div>
+          <div className="flex gap-6 text-neutral-400">
+            <a href="#services" className="hover:text-white transition-colors">Services</a>
+            <a href="#work" className="hover:text-white transition-colors">Case Studies</a>
+            <a href="#process" className="hover:text-white transition-colors">Process</a>
+            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

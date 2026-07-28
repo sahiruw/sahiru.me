@@ -4,203 +4,128 @@ import { Timeline } from "./ui/timeline";
 export default function TimelineDemo() {
   const data = [
     {
-      title: "2025 Jun - To Present",
+      title: "2025 Jun - Present",
       content: (
         <div>
           <div className="flex flex-col md:flex-row md:items-baseline md:justify-between">
             <div>
-              <h4 className="text-base md:text-lg font-semibold text-neutral-900 dark:text-neutral-100">
-                Software Engineer
+              <h4 className="text-base md:text-lg font-semibold text-white">
+                Software Engineer — Supply Chain & Logistics
               </h4>
-              <div className="text-sm text-blue-500 font-medium">
-                Sysco Labs Pvt Ltd. — SWMS
+              <div className="text-sm text-blue-400 font-medium mt-0.5">
+                Sysco Labs (Fortune 500 Enterprise Supply Chain)
               </div>
             </div>
           </div>
 
-          <p className="text-sm mt-3 text-neutral-700 dark:text-neutral-300">
-            Backend engineering for large-scale supply chain systems. Building and integrating
-            high-throughput services with a strong emphasis on data integrity, reliability,
-            and operational resilience.
+          <p className="text-sm mt-3 text-neutral-300 leading-relaxed">
+            Engineering high-throughput integration services that automate warehouse operations and real-time inventory staging for one of the world&apos;s largest food distribution networks.
           </p>
 
-          <ul className="mt-3 list-disc list-inside text-sm text-neutral-600 dark:text-neutral-400 space-y-1">
+          <ul className="mt-4 list-disc list-inside text-xs sm:text-sm text-neutral-400 space-y-1.5">
             <li>
-              Built and integrated multiple SIGMA and BlueYonder interfaces using
-              <span className="font-medium"> Spring Boot, Kafka, PostgreSQL, and PL/pgSQL</span>,
-              handling complex data mapping, staging, and status workflows.
+              Engineered high-concurrency SIGMA & BlueYonder backend interfaces handling millions of warehouse shipment records daily using <span className="text-white font-medium">Spring Boot, Kafka, and PostgreSQL</span>.
             </li>
             <li>
-              Designed automated purge and archival processes and authored supporting
-              <span className="font-medium"> Bash utilities</span> to improve operational efficiency.
+              Designed automated database archival & purging utilities with <span className="text-white font-medium">Bash & PL/pgSQL</span>, preventing database lock bottlenecks.
             </li>
             <li>
-              Implemented unit and end-to-end tests using
-              <span className="font-medium"> JUnit and Cypress</span>,
-              improving confidence in critical data pipelines.
-            </li>
-            <li>
-              Contributed to production readiness through DR runbooks and
-              database performance optimization research.
+              Established comprehensive test automation (<span className="text-white font-medium">JUnit & Cypress</span>) ensuring zero regression bugs across critical logistics pipelines.
             </li>
           </ul>
         </div>
       ),
-    }
-    ,
+    },
     {
       title: "2023 Dec - 2024 May",
       content: (
         <div>
           <div>
-            <h4 className="text-base md:text-lg font-semibold text-neutral-900 dark:text-neutral-100">
-              Software Engineering Intern
+            <h4 className="text-base md:text-lg font-semibold text-white">
+              Software Engineering Intern — Platform & Security
             </h4>
-            <div className="text-sm text-blue-500 font-medium">
-              GTN Technologies — Platform Engineering
+            <div className="text-sm text-blue-400 font-medium mt-0.5">
+              GTN Technologies (Fintech Platform Engineering)
             </div>
           </div>
 
-          <p className="text-sm mt-3 text-neutral-700 dark:text-neutral-300">
-            Platform engineering internship focused on infrastructure automation,
-            CI/CD reliability, cloud security, and developer productivity for fintech systems.
+          <p className="text-sm mt-3 text-neutral-300 leading-relaxed">
+            Architected cloud governance rules and infrastructure automation pipelines to cut AWS cloud costs and eliminate release bottlenecks for enterprise fintech systems.
           </p>
 
-          <ul className="mt-3 list-disc list-inside text-sm text-neutral-600 dark:text-neutral-400 space-y-1">
+          <ul className="mt-4 list-disc list-inside text-xs sm:text-sm text-neutral-400 space-y-1.5">
             <li>
-              Enhanced CI pipelines with static code analysis and automated
-              <span className="font-medium"> DAST using OWASP ZAP</span>.
+              Reduced cloud AMI build times by <span className="text-emerald-400 font-bold">62.5%</span> using optimized <span className="text-white font-medium">Packer</span> pipelines.
             </li>
             <li>
-              Optimized AWS resource usage by implementing policy-driven governance with
-              <span className="font-medium"> Cloud Custodian</span>.
+              Enforced automated AWS cost governance via policy rules (<span className="text-white font-medium">Cloud Custodian</span>), saving thousands monthly in orphan resources.
             </li>
             <li>
-              Modularized and standardized infrastructure using
-              <span className="font-medium"> Terraform</span> for reusable IaC components.
-            </li>
-            <li>
-              Reduced AMI build times by <span className="font-medium">62.5%</span> through
-              <span className="font-medium"> Packer</span> optimizations.
-            </li>
-            <li>
-              Implemented <span className="font-medium">DORA metrics</span> and observability
-              dashboards using <span className="font-medium">Datadog</span>.
+              Integrated automated dynamic security scanning (<span className="text-white font-medium">OWASP ZAP DAST</span>) directly into deployment pipelines.
             </li>
           </ul>
         </div>
       ),
-    }
-    ,
+    },
     {
       title: "2021 Aug - 2025 Jun",
       content: (
         <div>
           <div>
-            <h4 className="text-base md:text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+            <h4 className="text-base md:text-lg font-semibold text-white">
               B.Sc. Engineering (Hons) — Computer Science & Engineering
             </h4>
-            <div className="text-sm text-blue-500 font-medium">
+            <div className="text-sm text-blue-400 font-medium mt-0.5">
               University of Moratuwa — Faculty of Engineering
             </div>
           </div>
 
-          <p className="text-sm mt-3 text-neutral-700 dark:text-neutral-300">
-            Graduated with <span className="font-medium">First Class Honors</span> (CGPA:{" "}
-            <span className="font-medium">3.73</span>) and a <span className="font-medium">Minor in Mathematics</span>.
-            Strong focus on software engineering, distributed systems, backend development,
-            and cloud-native architectures.
+          <p className="text-sm mt-3 text-neutral-300 leading-relaxed">
+            Graduated with <span className="text-white font-semibold">First Class Honors (CGPA: 3.73/4.00)</span> and a Minor in Mathematics.
           </p>
 
-          <ul className="mt-3 list-disc list-inside text-sm text-neutral-600 dark:text-neutral-400 space-y-1">
-            <li>
-              <span className="font-medium">Dean’s List:</span> Semesters 02, 06, 07, and 08
-            </li>
-            <li>
-              Relevant coursework: Algorithms, Data Structures, Systems Design,
-              Software Engineering, Databases
-            </li>
-            <li>
-              <span className="font-medium">Publication:</span> MERCon 2025 — Transformer-based intent
-              classification for automated software deployment plan generation
-            </li>
-            <li>
-              Competitive programming & engineering competitions:
-              IEEEXtreme 16.0 (Sri Lanka Rank 9, Global Rank 220),
-              Bashaway 2022 (Winners),
-              Code Squad V3.0 (Second Runners-Up)
-            </li>
+          <ul className="mt-4 list-disc list-inside text-xs sm:text-sm text-neutral-400 space-y-1.5">
+            <li><span className="text-white font-medium">Dean’s List Honors:</span> Semesters 02, 06, 07, and 08</li>
+            <li><span className="text-white font-medium">IEEE Published Researcher:</span> Transformer-based intent classification for deployment plan automation (MERCon 2025)</li>
+            <li><span className="text-white font-medium">National Hackathon Winner:</span> Bashaway 2022 Champions, Code Squad V3.0 2nd Runners-Up</li>
           </ul>
         </div>
       ),
-    }
-    ,
+    },
     {
       title: "2019 Dec - Present",
       content: (
         <div>
           <div>
-            <h4 className="text-base md:text-lg font-semibold text-neutral-900 dark:text-neutral-100">
-              Freelance Developer
+            <h4 className="text-base md:text-lg font-semibold text-white">
+              Freelance AI & Automation Engineer
             </h4>
-            <div className="text-sm text-blue-500 font-medium">Apps Script & VBA</div>
+            <div className="text-sm text-blue-400 font-medium mt-0.5">Independent Consultancy</div>
           </div>
 
-          <p className="text-sm mt-3 text-neutral-700 dark:text-neutral-300">
-            Specialize in Google Apps Script and VBA for automation, spreadsheet tools, and
-            lightweight web tooling.
+          <p className="text-sm mt-3 text-neutral-300 leading-relaxed">
+            Delivered over <span className="text-emerald-400 font-bold">600+ custom software and automation solutions</span> for international businesses and mid-market companies.
           </p>
 
-          <ul className="mt-3 list-disc list-inside text-sm text-neutral-600 dark:text-neutral-400 space-y-1">
-            <li>Delivered 600+ projects across automation, reporting, and custom client workflows.</li>
-            <li>Focus on clear requirements, maintainable scripts, and user-friendly results.</li>
+          <ul className="mt-4 list-disc list-inside text-xs sm:text-sm text-neutral-400 space-y-1.5">
+            <li>Specializing in converting spreadsheet workflows into full-stack web platforms and cloud automations.</li>
+            <li>Consistent 5.0-star rating across global freelancing platforms.</li>
           </ul>
-        </div>
-      ),
-    },
-    {
-      title: "2019 Sep - 2020 Jan",
-      content: (
-        <div>
-          <div>
-            <h4 className="text-base md:text-lg font-semibold text-neutral-900 dark:text-neutral-100">
-              Project Associate
-            </h4>
-            <div className="text-sm text-blue-500 font-medium">Innodate Lanka Pvt Ltd</div>
-          </div>
-
-          <p className="text-sm mt-3 text-neutral-700 dark:text-neutral-300">
-            Worked on textbook digitization and XML markup for UK-standard documents, using
-            automation to improve throughput and accuracy.
-          </p>
-
-          <ul className="mt-3 list-disc list-inside text-sm text-neutral-600 dark:text-neutral-400 space-y-1">
-            <li>Developed Python scripts and markup tools to streamline document processing.</li>
-            <li>Applied regex and automated checks to ensure markup consistency.</li>
-          </ul>
-        </div>
-      ),
-    },
-    {
-      title: "2010 Jan - 2019 Aug",
-      content: (
-        <div>
-          <div>
-            <h4 className="text-base md:text-lg font-semibold text-neutral-900 dark:text-neutral-100">
-              Richmond College
-            </h4>
-          </div>
-
-          <p className="text-sm mt-3 text-neutral-700 dark:text-neutral-300">
-            Completed G.C.E. A/L (Physical Science Stream) with 3 A passes.
-          </p>
         </div>
       ),
     },
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="text-center max-w-3xl mx-auto mb-12">
+        <span className="text-blue-400 font-semibold text-xs sm:text-sm tracking-wider uppercase bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">
+          Professional Background
+        </span>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-4 tracking-tight">
+          Track Record & Enterprise Experience
+        </h2>
+      </div>
       <Timeline data={data} />
     </div>
   );

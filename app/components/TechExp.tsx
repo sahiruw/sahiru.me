@@ -1,109 +1,109 @@
+'use client';
 import React from 'react';
 import Image from 'next/image';
 
-const techSections = [
+const serviceStacks = [
     {
-        title: 'Languages',
+        title: "AI & Vector Engineering",
+        subtitle: "RAG architectures, Agentic workflows, and LLM automation",
         items: [
-            { name: 'Java', logo: '/logo/java.png' },
-            { name: 'JavaScript/TypeScript', logo: '/logo/js-ts.jpg' },
-            { name: 'Python', logo: '/logo/python.png' },
-            { name: 'C++', logo: '/logo/cpp.png' },
-            { name: 'Bash', logo: '/logo/bash.png' },
-            { name: 'Apps Script', logo: '/logo/apps-script.png' },
-            { name: 'VBA', logo: '/logo/vba.png' },
-        ],
-    },
-    {
-        title: 'Frameworks & Libraries',
-        items: [
-            { name: 'ReactJS', logo: '/logo/reactjs.png' },
-            { name: 'NextJS', logo: '/logo/nextjs.png' },
-            { name: 'Express', logo: '/logo/express.webp' },
+            { name: 'LangChain & RAG', logo: '/logo/python.png' },
+            { name: 'Vector Databases', logo: '/logo/python.png' },
+            { name: 'LLM APIs (Gemini/OpenAI)', logo: '/logo/python.png' },
             { name: 'FastAPI', logo: '/logo/fastapi.webp' },
-            { name: 'React Native', logo: '/logo/react-native.png' },
-        ],
+            { name: 'Python', logo: '/logo/python.png' },
+        ]
     },
     {
-        title: 'Databases & Caching',
+        title: "Backend & Systems Engineering",
+        subtitle: "High-throughput APIs, event-driven pipelines, and relational DBs",
         items: [
-            { name: 'MySQL', logo: '/logo/mysql.png' },
-            { name: 'Redis', logo: '/logo/redis.png' },
-        ],
+            { name: 'Java / Spring Boot', logo: '/logo/java.png' },
+            { name: 'JavaScript / TypeScript', logo: '/logo/js-ts.jpg' },
+            { name: 'Express / NestJS', logo: '/logo/express.webp' },
+            { name: 'PostgreSQL & MySQL', logo: '/logo/mysql.png' },
+            { name: 'Redis Caching', logo: '/logo/redis.png' },
+        ]
     },
     {
-        title: 'Cloud & DevOps',
+        title: "Cloud & DevOps Automation",
+        subtitle: "Infrastructure-as-Code, container orchestration, and security",
         items: [
-            { name: 'AWS', logo: '/logo/aws.png' },
-            { name: 'Terraform', logo: '/logo/tf.png' },
-            { name: 'Packer', logo: '/logo/packer.png' },
-            { name: 'Docker', logo: '/logo/docker.webp' },
+            { name: 'AWS Cloud', logo: '/logo/aws.png' },
+            { name: 'Terraform (IaC)', logo: '/logo/tf.png' },
+            { name: 'Docker Containers', logo: '/logo/docker.webp' },
+            { name: 'Packer & AMIs', logo: '/logo/packer.png' },
             { name: 'Cloud Custodian', logo: '/logo/cc.png' },
-        ],
+            { name: 'OWASP ZAP DAST', logo: '/logo/zap.png' },
+        ]
     },
     {
-        title: 'CI / Version Control',
+        title: "Internal Tools & Business Automation",
+        subtitle: "Modern React web applications and spreadsheet automation engines",
         items: [
-            { name: 'GitHub', logo: '/logo/github.png' },
-            { name: 'GitLab', logo: '/logo/gitlab.webp' },
-        ],
-    },
-    {
-        title: 'Other Tools',
-        items: [
+            { name: 'ReactJS / NextJS', logo: '/logo/nextjs.png' },
+            { name: 'Google Apps Script', logo: '/logo/apps-script.png' },
+            { name: 'VBA Automation', logo: '/logo/vba.png' },
+            { name: 'Bash Scripting', logo: '/logo/bash.png' },
             { name: 'Firebase', logo: '/logo/firebase.png' },
-            { name: 'ZAP', logo: '/logo/zap.png' },
-        ],
-    },
+        ]
+    }
 ];
-
 
 const TechStack = () => {
     return (
-        <section className="text-white px-6 pt-24 pb-20 bg-gradient-to-b to-[#0A1020] from-neutral-800 ">
-            <div className="max-w-7xl mx-auto">
-                <h2 className="text-3xl md:text-4xl text-center font-bold mb-2">Hands-On Experience</h2>
-                <p className="text-center text-sm text-neutral-300 mb-8 max-w-2xl mx-auto">
-                    Tools, frameworks and platforms I use regularly to build reliable systems and automation.
-                </p>
+        <section className="py-24 bg-[#070D1B] border-t border-white/5 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                    <span className="text-blue-400 font-semibold text-xs sm:text-sm tracking-wider uppercase bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">
+                        Battle-Tested Tooling
+                    </span>
+                    <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-4 tracking-tight">
+                        Technology Stack by Service Domain
+                    </h2>
+                    <p className="text-neutral-400 text-sm sm:text-base mt-3">
+                        Proven enterprise frameworks, databases, and automation tooling used to deliver scalable systems.
+                    </p>
+                </div>
 
-                <div className="space-y-8">
-                    {techSections.map((section) => (
-                        <div key={section.title}>
-                            <div className="flex items-center justify-between">
-                                <h3 className="text-sm uppercase tracking-wide text-neutral-300 font-medium">{section.title}</h3>
-                                {/* <span className="text-xs text-neutral-400">{section.items.length}</span> */}
-                            </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {serviceStacks.map((stack, idx) => (
+                        <div 
+                            key={idx}
+                            className="p-6 sm:p-8 rounded-2xl bg-white/[0.02] border border-white/10"
+                        >
+                            <h3 className="text-lg sm:text-xl font-bold text-white mb-1">
+                                {stack.title}
+                            </h3>
+                            <p className="text-xs text-neutral-400 mb-6">
+                                {stack.subtitle}
+                            </p>
 
-                            <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                                {section.items.map((tech) => (
+                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                                {stack.items.map((tech) => (
                                     <div
                                         key={tech.name}
-                                        role="listitem"
-                                        className="flex items-center gap-3 p-3 rounded-lg bg-white/5 hover:bg-white/7 transition transform hover:-translate-y-1 shadow-sm"
+                                        className="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/5 border border-white/5 hover:border-blue-500/30 hover:bg-white/10 transition-all duration-200"
                                     >
-                                        <div className="flex-shrink-0 h-12 w-12 rounded-md bg-white/6 dark:bg-white/3 flex items-center justify-center  overflow-hidden">
-                                            <div className="relative h-10 w-full">
-                                                <Image
-                                                    src={tech.logo}
-                                                    alt={`${tech.name} logo`}
-                                                    fill
-                                                    className="object-contain"
-                                                />
-                                            </div>
+                                        <div className="h-7 w-7 rounded-lg bg-white/10 flex items-center justify-center overflow-hidden flex-shrink-0 relative">
+                                            <Image
+                                                src={tech.logo}
+                                                alt={tech.name}
+                                                fill
+                                                className="object-contain p-1"
+                                            />
                                         </div>
-
-
-
-                                        <div className="min-w-0">
-                                            <p className="text-sm font-medium truncate">{tech.name}</p>
-                                        </div>
+                                        <span className="text-xs font-medium text-neutral-200 truncate">
+                                            {tech.name}
+                                        </span>
                                     </div>
                                 ))}
                             </div>
                         </div>
                     ))}
                 </div>
+
             </div>
         </section>
     );

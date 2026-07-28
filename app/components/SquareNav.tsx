@@ -4,11 +4,11 @@ import { FloatingDock } from "./ui/floating-dock";
 
 import {
   IoHomeOutline,
-  IoInformationCircleOutline,
   IoConstructOutline,
   IoBriefcaseOutline,
+  IoGitNetworkOutline,
+  IoHelpCircleOutline,
   IoCallOutline,
-  IoNewspaperOutline,
 } from 'react-icons/io5';
 
 export default function FloatingDockDemo() {
@@ -16,51 +16,49 @@ export default function FloatingDockDemo() {
     {
       title: "Home",
       icon: (
-        <IoHomeOutline className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IoHomeOutline className="h-full w-full text-neutral-300" />
       ),
-      href: "#",
-    },
-
-    {
-      title: "About",
-      icon: (
-        <IoInformationCircleOutline className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#about",
-    },
-    {
-      title: "Contact",
-      icon: (
-        <IoCallOutline className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#contact",
-    },
-    {
-      title: "Projects",
-      icon: (
-        <IoBriefcaseOutline className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#work",
+      href: "#home",
     },
     {
       title: "Services",
       icon: (
-        <IoConstructOutline className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IoConstructOutline className="h-full w-full text-neutral-300" />
       ),
       href: "#services",
     },
-
     {
-      title: "Blog",
+      title: "Case Studies",
       icon: (
-        <IoNewspaperOutline className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IoBriefcaseOutline className="h-full w-full text-neutral-300" />
       ),
-      href: "/blog",
-    }
+      href: "#work",
+    },
+    {
+      title: "Process",
+      icon: (
+        <IoGitNetworkOutline className="h-full w-full text-neutral-300" />
+      ),
+      href: "#process",
+    },
+    {
+      title: "FAQ",
+      icon: (
+        <IoHelpCircleOutline className="h-full w-full text-neutral-300" />
+      ),
+      href: "#faq",
+    },
+    {
+      title: "Book / Contact",
+      icon: (
+        <IoCallOutline className="h-full w-full text-neutral-300" />
+      ),
+      href: "#contact",
+    },
   ];
 
   return (
-    <div className={`fixed bottom-4 left-1/2 transform -translate-x-1/2 inline-flex mx-auto justify-between w-11/12 rounded-3xl transition-colors duration-300 z-50`}>
+    <div className={`fixed bottom-4 left-1/2 transform -translate-x-1/2 inline-flex mx-auto justify-between w-11/12 max-w-max rounded-3xl transition-colors duration-300 z-50`}>
       <FloatingDock
         items={links}
       />

@@ -1,63 +1,82 @@
 'use client';
-import React from 'react';
-import Typewriter from 'typewriter-effect';
+import React, { useState } from 'react';
+import { FaCalendarAlt, FaBriefcase, FaGraduationCap, FaAward, FaBolt, FaArrowRight } from 'react-icons/fa';
 
 const HelloCard = () => {
-    let passions = [
-        "Web Development",
-        "Mobile App Development",
-        "Cloud & DevOps",
-        "Genrative AI & ML",
-        "Apps Script & VBA Automation",
-    ];
     const portraitUrl = '/me3.png';
+    const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
 
     return (
-        <div 
-            className="text-white absolute inset-0 flex flex-col items-center justify-center px-4 py-6 sm:p-10 mb-10 sm:mb-20"
+        <section className="relative z-10 min-h-[90vh] flex flex-col items-center justify-center px-4 py-16 sm:py-24 max-w-6xl mx-auto text-center">
             
-        >
-            <img 
-                src={portraitUrl} 
-                alt="Sahiru Wijesinghe" 
-                className="w-24 h-24 sm:w-32 sm:h-32 md:w-60 md:h-60 rounded-full object-cover border-4 border-blue-500 shadow-lg mb-4 sm:mb-6 -pt-10" 
-            />
-            <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold text-center">
-                Hello, I&apos;m <span className="text-blue-500">Sahiru</span>
+            {/* Top Pill - Differentiated Positioning */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs sm:text-sm font-medium mb-6 backdrop-blur-md animate-pulse">
+                <span className="flex h-2 w-2 rounded-full bg-blue-400"></span>
+                AI & Backend Systems Engineer • Available for Select Consultations
+            </div>
+
+            {/* Main Value Proposition Headline */}
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight sm:leading-none max-w-4xl">
+                I build <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-300">AI-powered business systems</span> that replace spreadsheets & automate operations.
             </h1>
-            <span className="text-neutral-500 text-center mt-3 sm:mt-4">
-                <span className="text-base sm:text-xl md:text-2xl">Software Engineer, Freelancer</span>
-                <p className='text-sm sm:text-base'>Passionate About</p>
-                <span className="text-neutral-300">
-                    <Typewriter
-                        options={{
-                            strings: passions,
-                            autoStart: true,
-                            loop: true,
-                            skipAddStyles: true
-                        }}
-                    />
-                </span>
-            </span>            
-              <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 mt-4 sm:mt-6 w-full sm:w-auto px-4 sm:px-0">
+
+            {/* Supporting Subheadline focused on Outcomes */}
+            <p className="mt-6 text-base sm:text-xl text-neutral-300 max-w-3xl font-normal leading-relaxed">
+                Helping mid-market companies and fast-scaling teams eliminate manual labor, streamline warehouse logistics, and build scalable cloud infrastructure. Save hundreds of hours every month.
+            </p>
+
+            {/* Action Buttons (CTAs) */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 w-full sm:w-auto px-4">
+                <a
+                    href="#contact"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-all duration-200 shadow-lg shadow-blue-600/30 hover:scale-[1.02]"
+                >
+                    <FaCalendarAlt className="text-base" />
+                    Book Free 30-Min Strategy Call
+                </a>
+
+                <a
+                    href="#work"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-neutral-800/80 hover:bg-neutral-700/80 border border-neutral-700 text-neutral-200 font-semibold text-sm transition-all duration-200 backdrop-blur-md hover:text-white"
+                >
+                    Explore Case Studies
+                    <FaArrowRight className="text-xs" />
+                </a>
+
                 <a
                     href="/Sahiru 1.2.1.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white bg-blue-500 hover:bg-gradient-to-bl focus:ring-1 focus:outline-none focus:ring-orange-200 rounded-lg text-sm px-4 py-2.5 sm:py-2 text-center w-full sm:w-auto"
+                    className="w-full sm:w-auto inline-flex items-center justify-center px-4 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-400 hover:text-neutral-200 font-medium text-sm transition-all border border-white/5"
                 >
-                    View CV
-                </a>
-                <a
-                    href="https://wa.me/94772626113?text=Hi%20Sahiru%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white bg-blue-500 hover:bg-gradient-to-bl focus:ring-1 focus:outline-none focus:ring-orange-200 rounded-lg text-sm px-4 py-2.5 sm:py-2 text-center w-full sm:w-auto"
-                >
-                    Contact Me
+                    View Engineering Resume
                 </a>
             </div>
-        </div>
+
+            {/* Trust Signal Cards / Numbers */}
+            <div className="mt-14 w-full grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl text-left">
+                <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md">
+                    <div className="text-blue-400 font-bold text-xl sm:text-2xl">6+ Years</div>
+                    <div className="text-neutral-400 text-xs mt-1">Full-Stack & Automation</div>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md">
+                    <div className="text-blue-400 font-bold text-xl sm:text-2xl">Fortune 500</div>
+                    <div className="text-neutral-400 text-xs mt-1">Software Engineer (Sysco)</div>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md">
+                    <div className="text-blue-400 font-bold text-xl sm:text-2xl">600+ Solutions</div>
+                    <div className="text-neutral-400 text-xs mt-1">Delivered to Global Clients</div>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md">
+                    <div className="text-blue-400 font-bold text-xl sm:text-2xl">1st Class Hons</div>
+                    <div className="text-neutral-400 text-xs mt-1">Univ. of Moratuwa (3.73 GPA)</div>
+                </div>
+            </div>
+
+        </section>
     );
 };
 

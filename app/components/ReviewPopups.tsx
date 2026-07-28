@@ -188,6 +188,8 @@ export default function ReviewPopups() {
   };
 
   const getCountryCode = (countryName: string): string => {
+    if (!countryName) return "us";
+    if (countryName.toLowerCase() === "japan") return "jp";
     return countryNameToCode[countryName] || countryName.toLowerCase().substring(0, 2);
   };
 
@@ -232,7 +234,7 @@ export default function ReviewPopups() {
               <span className="text-white/60 text-[10px] md:text-xs">Fiverr Review</span>
             </div>
             <p className="text-white/90 text-xs md:text-sm leading-relaxed mb-2">
-              "{truncateComment(review.comment)}"
+              "{review.comment}"
             </p>
             <div className="flex items-center justify-between flex-wrap gap-1">
               <span className="text-white/60 text-[10px] md:text-xs">— {review.username}</span>

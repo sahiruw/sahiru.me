@@ -1,82 +1,178 @@
 'use client';
-// components/ProjectShowcase.js
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import styles from '../../styles/ProjectShowcase.module.css';
-import { GithubButton } from './projects/Buttons';
+import { FaCheckCircle, FaExternalLinkAlt, FaCodeBranch, FaCubes } from 'react-icons/fa';
 
 interface Project {
     id: number;
-    imageUrl: string;
     title: string;
     category: string;
+    imageUrl: string;
     shortDescription: string;
     tags: string[];
-    urls: { url: string; title: string }[];
+    urls: { url: string; title: string; type?: string }[];
     color: string;
+    problem: string;
+    solution: string;
+    architecture: string;
+    results: string[];
 }
 
-const ProjectShowcase = () => {
+const RecentWork = () => {
     const [projects, setProjects] = useState<Project[]>([]);
+    const [filter, setFilter] = useState<string>('All');
 
     useEffect(() => {
-        fetch('/api/projects?count=7')
-            .then((response) => response.json())
-            .then((data) => setProjects(data.message));
+        fetch('/api/projects')
+            .then((res) => res.json())
+            .then((data) => {
+                if (Array.isArray(data.message)) {
+                    setProjects(data.message);
+                }
+            })
+            .catch((err) => console.error("Error loading projects:", err));
     }, []);
 
+    const categories = ['All', 'Internal Business Tools', 'AI Engineering & DevOps', 'Backend & Enterprise Integrations', 'Business Automation'];
+
+    const filteredProjects = filter === 'All'
+        ? projects
+        : projects.filter(p => p.category.includes(filter) || p.tags.some(t => t.toLowerCase().includes(filter.toLowerCase())));
+
     return (
-        <section className="py-20 bg-gradient-to-b from-[#071025] to-neutral-800">
-            <div className="max-w-7xl mx-auto px-6">
-                <h1 className="text-3xl md:text-4xl text-center text-white font-bold mb-4">Recent Projects</h1>
-                <p className="text-center text-sm text-neutral-300 mb-8 max-w-3xl mx-auto">
-                    A curated selection of recent work — click through to see project details and source where available.
-                </p>
+        <section className="py-24 bg-[#0A1020] border-t border-white/5 relative z-10" id="work">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                {/* Section Header */}
+                <div className="text-center max-w-3xl mx-auto mb-12">
+                    <span className="text-blue-400 font-semibold text-xs sm:text-sm tracking-wider uppercase bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">
+                        Proven Track Record
+                    </span>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mt-4 tracking-tight">
+                        Featured Engineering Case Studies
+                    </h2>
+                    <p className="text-neutral-400 text-base sm:text-lg mt-4 leading-relaxed">
+                        In-depth looks at real client problems, high-performance system architectures, and measurable business outcomes.
+                    </p>
+                </div>
 
-                {projects.length === 0 ? (
-                    <div className="text-center text-neutral-400 py-20">No projects available at the moment.</div>
-                ) : (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                        {projects.map((project) => (
-                            <article key={project.id} className="relative group">
-                                <div className={`${styles.projectCard} rounded-lg overflow-hidden`}>
-                                    <Image src={project.imageUrl} alt={project.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
-                                    <div className="gradientOverlay" />
-                                </div>
+                {/* Filter Tabs */}
+                <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+                    {categories.map((cat) => (
+                        <button
+                            key={cat}
+                            onClick={() => setFilter(cat)}
+                            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all duration-200 ${
+                                filter === cat
+                                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30'
+                                    : 'bg-white/5 text-neutral-400 hover:text-white hover:bg-white/10 border border-white/5'
+                            }`}
+                        >
+                            {cat}
+                        </button>
+                    ))}
+                </div>
 
-                                <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <div className="bg-black/70 backdrop-blur-md rounded-lg p-4">
-                                        <h2 className="text-lg font-semibold text-white truncate">{project.title}</h2>
-                                        <p className="text-xs text-neutral-300 mt-1">{project.category}</p>
-                                        <p className="text-sm text-neutral-200 mt-2 line-clamp-3">{project.shortDescription}</p>
-
-                                        <div className="mt-3 flex flex-wrap gap-2">
-                                            {project.tags.map((tag, index) => (
-                                                <span key={index} className="text-xs bg-white/10 px-2 py-1 rounded text-neutral-100">{tag}</span>
-                                            ))}
-                                        </div>
-
-                                        <div className="mt-4 flex items-center gap-3">
-                                            <Link href={`/projects/${project.id}`} className="inline-flex items-center px-3 py-1.5 bg-blue-500 text-white rounded text-xs hover:bg-blue-600 transition">View Project</Link>
-
-                                            {project.urls.map((link, i) => (
-                                                <GithubButton key={i} url={link.url} />
-                                            ))}
-                                        </div>
+                {/* Case Studies Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    {filteredProjects.map((project) => (
+                        <article
+                            key={project.id}
+                            className="p-6 sm:p-8 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between"
+                        >
+                            <div>
+                                {/* Header badge + title */}
+                                <div className="flex items-center justify-between gap-4 mb-4">
+                                    <span className="text-xs font-semibold text-blue-400 bg-blue-500/10 px-3 py-1 rounded-md border border-blue-500/20">
+                                        {project.category}
+                                    </span>
+                                    <div className="flex gap-2">
+                                        {project.tags.slice(0, 3).map((tag, idx) => (
+                                            <span key={idx} className="text-[11px] bg-white/5 text-neutral-400 px-2 py-0.5 rounded border border-white/5">
+                                                {tag}
+                                            </span>
+                                        ))}
                                     </div>
                                 </div>
-                            </article>
-                        ))}
 
-                        <Link href="/projects" className="flex items-center justify-center rounded-lg bg-gray-800 p-6 hover:bg-gray-700 transition">
-                            <span className="text-white text-lg font-semibold">See More Projects</span>
-                        </Link>
-                    </div>
-                )}
+                                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
+                                    {project.title}
+                                </h3>
+
+                                {/* Problem vs Solution Grid */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+                                    <div className="p-4 rounded-xl bg-red-950/20 border border-red-900/30">
+                                        <h4 className="text-xs font-bold text-red-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                                            <span>•</span> The Problem
+                                        </h4>
+                                        <p className="text-xs text-neutral-300 leading-relaxed line-clamp-3">
+                                            {project.problem}
+                                        </p>
+                                    </div>
+
+                                    <div className="p-4 rounded-xl bg-emerald-950/20 border border-emerald-900/30">
+                                        <h4 className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                                            <span>✓</span> The Solution
+                                        </h4>
+                                        <p className="text-xs text-neutral-300 leading-relaxed line-clamp-3">
+                                            {project.solution}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Measurable Results */}
+                                <div className="mb-6">
+                                    <h4 className="text-xs font-semibold text-neutral-300 uppercase tracking-wider mb-3">
+                                        Measurable Results:
+                                    </h4>
+                                    <ul className="space-y-2">
+                                        {project.results?.map((res, rIdx) => (
+                                            <li key={rIdx} className="text-xs text-neutral-300 flex items-start gap-2">
+                                                <FaCheckCircle className="text-emerald-400 text-xs mt-0.5 flex-shrink-0" />
+                                                <span>{res}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            {/* Footer links */}
+                            <div className="border-t border-white/5 pt-4 mt-2 flex items-center justify-between">
+                                <Link
+                                    href={`/projects/${project.id}`}
+                                    className="inline-flex items-center gap-2 text-xs font-semibold text-blue-400 hover:text-blue-300 transition-colors"
+                                >
+                                    Read Full Architecture Breakdown →
+                                </Link>
+
+                                {project.urls?.[0] && (
+                                    <a
+                                        href={project.urls[0].url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1.5 text-xs text-neutral-400 hover:text-white transition-colors"
+                                    >
+                                        <FaCodeBranch className="text-xs" />
+                                        <span>{project.urls[0].title}</span>
+                                    </a>
+                                )}
+                            </div>
+                        </article>
+                    ))}
+                </div>
+
+                <div className="text-center mt-12">
+                    <Link
+                        href="/projects"
+                        className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-white font-medium text-sm transition-all border border-white/10"
+                    >
+                        View All Project Case Studies & Details
+                    </Link>
+                </div>
+
             </div>
         </section>
     );
 };
 
-export default ProjectShowcase;
+export default RecentWork;
