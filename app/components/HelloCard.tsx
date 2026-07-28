@@ -17,7 +17,7 @@ const HelloCard = () => {
         transition={{ duration: 0.4, ease: 'easeOut' }}
         className="mb-3 sm:mb-4"
       >
-        <div className="relative mx-auto h-16 w-16 sm:h-20 sm:w-20 rounded-full overflow-hidden ring-2 ring-[var(--border)] ring-offset-4 ring-offset-[var(--bg)] shadow-md">
+        <div className="relative h-40 w-40 sm:h-32 sm:w-32 rounded-full overflow-hidden ring-2 ring-[var(--border)] ring-offset-4 ring-offset-[var(--bg)] shadow-md">
           <Image
             src="/me3.png"
             alt="Sahiru Wijesinghe"
