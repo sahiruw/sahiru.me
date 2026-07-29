@@ -15,9 +15,35 @@ const ContactSection = () => {
         );
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setSubmitted(true);
+
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/6d6d9dcb376812e527dd50e5441956d4", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({
+                    _subject: `New Project Inquiry from ${formData.name}`,
+                    name: formData.name,
+                    email: formData.email,
+                    company: formData.company || 'N/A',
+                    services: selectedServices.join(', '),
+                    message: formData.description
+                })
+            });
+
+            if (response.ok) {
+                setSubmitted(true);
+            } else {
+                alert("Something went wrong. Please try again.");
+            }
+        } catch (error) {
+            console.error(error);
+            alert("Something went wrong. Please try again.");
+        }
     };
 
     const servicesList = ["AI Automation & RAG", "Internal Web Application", "Cloud & DevOps", "High-Throughput APIs", "Spreadsheet Modernization"];
@@ -76,7 +102,7 @@ const ContactSection = () => {
                                 Zero pressure. We evaluate your current workflow, spot bottlenecks, and design a custom architecture outline.
                             </p>
                             <a
-                                href="https://wa.me/94772626113?text=Hi%20Sahiru%2C%20I%20would%20like%20to%20schedule%20a%20free%2030-minute%20architecture%20consultation."
+                                href="https://wa.me/94772626113?text=Hi%20Sahiru%2C%20I%20would%20like%20to%20schedule%20a%20free%2030-minute%20consultation."
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-xl font-semibold text-sm transition-all"
@@ -91,7 +117,7 @@ const ContactSection = () => {
                         <div className="p-5 rounded-2xl border space-y-3" style={{ background: 'var(--bg-muted)', borderColor: 'var(--border)' }}>
                             <h4 className="text-xs font-mono font-bold uppercase tracking-wider" style={{ color: 'var(--text-faint)' }}>Engagement Guarantees:</h4>
                             {[
-                                { icon: LuClock, text: <><strong>48-Hour Response SLA</strong> · Fast turnaround on inquiries & RFPs.</> },
+                                { icon: LuClock, text: <><strong>12-Hour Response SLA</strong> · Fast turnaround on inquiries & RFPs.</> },
                                 { icon: LuDollarSign, text: <><strong>Fixed-Fee Quotes</strong> · Clear scope with zero billing surprises.</> },
                                 { icon: LuUserCheck, text: <><strong>Direct Engineer Access</strong> · Work directly with me - no middlemen.</> },
                             ].map(({ icon: Icon, text }, i) => (
@@ -141,7 +167,7 @@ const ContactSection = () => {
                                     </div>
                                 </div>
 
-                                <div>
+                                {/* <div>
                                     <label className="block text-xs font-mono font-semibold uppercase tracking-wider mb-3" style={{ color: 'var(--text-muted)' }}>
                                         Budget Range:
                                     </label>
@@ -161,7 +187,7 @@ const ContactSection = () => {
                                             </button>
                                         ))}
                                     </div>
-                                </div>
+                                </div> */}
 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>

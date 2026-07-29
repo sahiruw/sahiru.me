@@ -41,7 +41,7 @@ const HelloCard = () => {
           style={{ borderColor: 'var(--border)', color: 'var(--text-muted)', background: 'var(--bg-muted)' }}
         >
           <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-          Available · Freelance Engineer & Consultant
+          Freelance Engineer & Consultant
         </span>
       </motion.div>
 
